@@ -13,7 +13,7 @@ $(function() {
     if (e.keyCode == 13) {
       var name = $('#name').val();
       var text = $('#message').val();
-      firebase.push({name: name, text: text});
+      firebase.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
       $('#message').val('');
     }
   });
@@ -33,7 +33,11 @@ $(function() {
 
 
   $('#rapbuttons button').on('click', function() {
-    firebase.push({name: name, sticker: $(this).text(), slug: $(this).data('slug')});
+    firebase.push({
+      name: name, sticker: $(this).text(),
+      slug: $(this).data('slug'),
+      ts: Firebase.ServerValue.TIMESTAMP
+    });
   });
 
   $('#clear').on('click', function() {
@@ -48,6 +52,9 @@ $(function() {
   // Firebase and chat stuff
   firebase.on('child_added', function(snapshot) {
     var message = snapshot.val();
+    if (message.ts < new Date().getTime() - 5000) {
+      return;
+    }
     console.log(message);
     if (message.sticker) {
       newSticker(message.sticker, message.slug);
