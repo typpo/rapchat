@@ -1,0 +1,871 @@
+.messages {
+  background-color: #eee;
+  height: 500px;
+  border: 1px solid #ccc;
+
+  overflow-y: scroll;
+}
+
+.sticker {
+  width: 140px;
+  height: 140px;
+}
+
+.artists-sprite, .artists-actionbronson, .artists-akon, .artists-beaniesigel, .artists-bigboi, .artists-biggie, .artists-bigl, .artists-bigsean, .artists-birdman, .artists-bowwow, .artists-bunb, .artists-busta, .artists-camron, .artists-chiefkeef, .artists-chingy, .artists-currensy, .artists-dabrat, .artists-dannybrown, .artists-davidbanner, .artists-diddy, .artists-dizzee, .artists-djpaul, .artists-dmx, .artists-drake, .artists-drdre, .artists-drummaboy, .artists-e40, .artists-eazye, .artists-eminem, .artists-fatjoe, .artists-fiftycent, .artists-flava, .artists-freeway, .artists-frenchie, .artists-ghostface, .artists-grandmaster, .artists-gucci, .artists-hurricane, .artists-icecube, .artists-inspectahdeck, .artists-jadakiss, .artists-jarule, .artists-jayz, .artists-jazzypha, .artists-jd, .artists-jeezy, .artists-jimjones, .artists-juelz, .artists-juicyj, .artists-kanye, .artists-khaled, .artists-killermike, .artists-krsone, .artists-lilb, .artists-liljon, .artists-lilscrappy, .artists-lloydbanks, .artists-ludacris, .artists-mannie, .artists-mceight, .artists-mchammer, .artists-methodman, .artists-mikejones, .artists-mop, .artists-nas, .artists-natedogg, .artists-noreaga, .artists-odb, .artists-oj, .artists-pharrell, .artists-pill, .artists-pimpc, .artists-pitbull, .artists-projectpat, .artists-pushat, .artists-raekwon, .artists-redman, .artists-ross, .artists-seanprice, .artists-snoop, .artists-soulja, .artists-swizz, .artists-thugga, .artists-ti, .artists-tooshort, .artists-tpain, .artists-treysongz, .artists-trickdaddy, .artists-tupac, .artists-twochainz, .artists-tyga, .artists-vado, .artists-waka, .artists-weezy, .artists-willsmith, .artists-wiz {
+  background: url('images/artists.png') no-repeat;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-actionbronson {
+  background-position: 0 -24912px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-actionbronson:hover, .artists-actionbronson.actionbronson_hover, .artists-actionbronson.actionbronson-hover {
+  background-position: 0 -8352px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-akon {
+  background-position: 0 -16992px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-akon:hover, .artists-akon.akon_hover, .artists-akon.akon-hover {
+  background-position: 0 -5904px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-beaniesigel {
+  background-position: 0 -26208px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-beaniesigel:hover, .artists-beaniesigel.beaniesigel_hover, .artists-beaniesigel.beaniesigel-hover {
+  background-position: 0 -12096px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigboi {
+  background-position: 0 -11952px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigboi:hover, .artists-bigboi.bigboi_hover, .artists-bigboi.bigboi-hover {
+  background-position: 0 -576px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-biggie {
+  background-position: 0 -15408px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-biggie:hover, .artists-biggie.biggie_hover, .artists-biggie.biggie-hover {
+  background-position: 0 -6768px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigl {
+  background-position: 0 -22032px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigl:hover, .artists-bigl.bigl_hover, .artists-bigl.bigl-hover {
+  background-position: 0 -4896px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigsean {
+  background-position: 0 -23472px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bigsean:hover, .artists-bigsean.bigsean_hover, .artists-bigsean.bigsean-hover {
+  background-position: 0 -13104px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-birdman {
+  background-position: 0 -15840px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-birdman:hover, .artists-birdman.birdman_hover, .artists-birdman.birdman-hover {
+  background-position: 0 -1440px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bowwow {
+  background-position: 0 -22176px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bowwow:hover, .artists-bowwow.bowwow_hover, .artists-bowwow.bowwow-hover {
+  background-position: 0 -4608px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bunb {
+  background-position: 0 -24624px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-bunb:hover, .artists-bunb.bunb_hover, .artists-bunb.bunb-hover {
+  background-position: 0 -9216px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-busta {
+  background-position: 0 -11376px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-busta:hover, .artists-busta.busta_hover, .artists-busta.busta-hover {
+  background-position: 0 -1728px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-camron {
+  background-position: 0 -19872px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-camron:hover, .artists-camron.camron_hover, .artists-camron.camron-hover {
+  background-position: 0 -7200px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-chiefkeef {
+  background-position: 0 -11520px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-chiefkeef:hover, .artists-chiefkeef.chiefkeef_hover, .artists-chiefkeef.chiefkeef-hover {
+  background-position: 0 -288px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-chingy {
+  background-position: 0 -26496px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-chingy:hover, .artists-chingy.chingy_hover, .artists-chingy.chingy-hover {
+  background-position: 0 -14400px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-currensy {
+  background-position: 0 -23904px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-currensy:hover, .artists-currensy.currensy_hover, .artists-currensy.currensy-hover {
+  background-position: 0 -9360px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dabrat {
+  background-position: 0 -10656px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dabrat:hover, .artists-dabrat.dabrat_hover, .artists-dabrat.dabrat-hover {
+  background-position: 0 -144px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dannybrown {
+  background-position: 0 -26640px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dannybrown:hover, .artists-dannybrown.dannybrown_hover, .artists-dannybrown.dannybrown-hover {
+  background-position: 0 -14112px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-davidbanner {
+  background-position: 0 -19728px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-davidbanner:hover, .artists-davidbanner.davidbanner_hover, .artists-davidbanner.davidbanner-hover {
+  background-position: 0 -7632px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-diddy {
+  background-position: 0 -21456px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-diddy:hover, .artists-diddy.diddy_hover, .artists-diddy.diddy-hover {
+  background-position: 0 -10800px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dizzee {
+  background-position: 0 -24768px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dizzee:hover, .artists-dizzee.dizzee_hover, .artists-dizzee.dizzee-hover {
+  background-position: 0 -11088px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-djpaul {
+  background-position: 0 -18720px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-djpaul:hover, .artists-djpaul.djpaul_hover, .artists-djpaul.djpaul-hover {
+  background-position: 0 -5040px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dmx {
+  background-position: 0 -25776px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-dmx:hover, .artists-dmx.dmx_hover, .artists-dmx.dmx-hover {
+  background-position: 0 -12960px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drake {
+  background-position: 0 -23616px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drake:hover, .artists-drake.drake_hover, .artists-drake.drake-hover {
+  background-position: 0 -13392px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drdre {
+  background-position: 0 -18000px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drdre:hover, .artists-drdre.drdre_hover, .artists-drdre.drdre-hover {
+  background-position: 0 -4032px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drummaboy {
+  background-position: 0 -19008px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-drummaboy:hover, .artists-drummaboy.drummaboy_hover, .artists-drummaboy.drummaboy-hover {
+  background-position: 0 -7776px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-e40 {
+  background-position: 0 -14544px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-e40:hover, .artists-e40.e40_hover, .artists-e40.e40-hover {
+  background-position: 0 -3456px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-eazye {
+  background-position: 0 -20304px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-eazye:hover, .artists-eazye.eazye_hover, .artists-eazye.eazye-hover {
+  background-position: 0 -3024px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-eminem {
+  background-position: 0 -24048px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-eminem:hover, .artists-eminem.eminem_hover, .artists-eminem.eminem-hover {
+  background-position: 0 -10368px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-fatjoe {
+  background-position: 0 -16560px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-fatjoe:hover, .artists-fatjoe.fatjoe_hover, .artists-fatjoe.fatjoe-hover {
+  background-position: 0 -3744px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-fiftycent {
+  background-position: 0 -17712px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-fiftycent:hover, .artists-fiftycent.fiftycent_hover, .artists-fiftycent.fiftycent-hover {
+  background-position: 0 -3888px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-flava {
+  background-position: 0 -16704px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-flava:hover, .artists-flava.flava_hover, .artists-flava.flava-hover {
+  background-position: 0 -2016px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-freeway {
+  background-position: 0 -21888px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-freeway:hover, .artists-freeway.freeway_hover, .artists-freeway.freeway-hover {
+  background-position: 0 -5760px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-frenchie {
+  background-position: 0 -22320px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-frenchie:hover, .artists-frenchie.frenchie_hover, .artists-frenchie.frenchie-hover {
+  background-position: 0 -5472px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ghostface {
+  background-position: 0 -12672px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ghostface:hover, .artists-ghostface.ghostface_hover, .artists-ghostface.ghostface-hover {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-grandmaster {
+  background-position: 0 -20592px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-grandmaster:hover, .artists-grandmaster.grandmaster_hover, .artists-grandmaster.grandmaster-hover {
+  background-position: 0 -6480px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-gucci {
+  background-position: 0 -22464px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-gucci:hover, .artists-gucci.gucci_hover, .artists-gucci.gucci-hover {
+  background-position: 0 -12528px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-hurricane {
+  background-position: 0 -10944px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-hurricane:hover, .artists-hurricane.hurricane_hover, .artists-hurricane.hurricane-hover {
+  background-position: 0 -720px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-icecube {
+  background-position: 0 -21744px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-icecube:hover, .artists-icecube.icecube_hover, .artists-icecube.icecube-hover {
+  background-position: 0 -7344px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-inspectahdeck {
+  background-position: 0 -26352px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-inspectahdeck:hover, .artists-inspectahdeck.inspectahdeck_hover, .artists-inspectahdeck.inspectahdeck-hover {
+  background-position: 0 -13824px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jadakiss {
+  background-position: 0 -12384px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jadakiss:hover, .artists-jadakiss.jadakiss_hover, .artists-jadakiss.jadakiss-hover {
+  background-position: 0 -1584px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jarule {
+  background-position: 0 -21168px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jarule:hover, .artists-jarule.jarule_hover, .artists-jarule.jarule-hover {
+  background-position: 0 -9648px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jayz {
+  background-position: 0 -17856px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jayz:hover, .artists-jayz.jayz_hover, .artists-jayz.jayz-hover {
+  background-position: 0 -5184px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jazzypha {
+  background-position: 0 -24192px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jazzypha:hover, .artists-jazzypha.jazzypha_hover, .artists-jazzypha.jazzypha-hover {
+  background-position: 0 -9504px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jd {
+  background-position: 0 -20880px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jd:hover, .artists-jd.jd_hover, .artists-jd.jd-hover {
+  background-position: 0 -4176px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jeezy {
+  background-position: 0 -17280px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jeezy:hover, .artists-jeezy.jeezy_hover, .artists-jeezy.jeezy-hover {
+  background-position: 0 -8640px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jimjones {
+  background-position: 0 -16272px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-jimjones:hover, .artists-jimjones.jimjones_hover, .artists-jimjones.jimjones-hover {
+  background-position: 0 -4320px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-juelz {
+  background-position: 0 -13536px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-juelz:hover, .artists-juelz.juelz_hover, .artists-juelz.juelz-hover {
+  background-position: 0 -2160px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-juicyj {
+  background-position: 0 -19152px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-juicyj:hover, .artists-juicyj.juicyj_hover, .artists-juicyj.juicyj-hover {
+  background-position: 0 -16128px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-kanye {
+  background-position: 0 -23184px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-kanye:hover, .artists-kanye.kanye_hover, .artists-kanye.kanye-hover {
+  background-position: 0 -7920px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-khaled {
+  background-position: 0 -8784px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-khaled:hover, .artists-khaled.khaled_hover, .artists-khaled.khaled-hover {
+  background-position: 0 -6048px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-killermike {
+  background-position: 0 -27072px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-killermike:hover, .artists-killermike.killermike_hover, .artists-killermike.killermike-hover {
+  background-position: 0 -17424px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-krsone {
+  background-position: 0 -26928px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-krsone:hover, .artists-krsone.krsone_hover, .artists-krsone.krsone-hover {
+  background-position: 0 -14688px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lilb {
+  background-position: 0 -18576px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lilb:hover, .artists-lilb.lilb_hover, .artists-lilb.lilb-hover {
+  background-position: 0 -1872px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-liljon {
+  background-position: 0 -25488px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-liljon:hover, .artists-liljon.liljon_hover, .artists-liljon.liljon-hover {
+  background-position: 0 -11664px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lilscrappy {
+  background-position: 0 -18432px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lilscrappy:hover, .artists-lilscrappy.lilscrappy_hover, .artists-lilscrappy.lilscrappy-hover {
+  background-position: 0 -3168px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lloydbanks {
+  background-position: 0 -17136px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-lloydbanks:hover, .artists-lloydbanks.lloydbanks_hover, .artists-lloydbanks.lloydbanks-hover {
+  background-position: 0 -2736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ludacris {
+  background-position: 0 -15120px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ludacris:hover, .artists-ludacris.ludacris_hover, .artists-ludacris.ludacris-hover {
+  background-position: 0 -1008px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mannie {
+  background-position: 0 -15696px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mannie:hover, .artists-mannie.mannie_hover, .artists-mannie.mannie-hover {
+  background-position: 0 -2592px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mceight {
+  background-position: 0 -18864px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mceight:hover, .artists-mceight.mceight_hover, .artists-mceight.mceight-hover {
+  background-position: 0 -2448px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mchammer {
+  background-position: 0 -22752px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mchammer:hover, .artists-mchammer.mchammer_hover, .artists-mchammer.mchammer-hover {
+  background-position: 0 -6624px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-methodman {
+  background-position: 0 -25344px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-methodman:hover, .artists-methodman.methodman_hover, .artists-methodman.methodman-hover {
+  background-position: 0 -11232px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mikejones {
+  background-position: 0 -15984px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mikejones:hover, .artists-mikejones.mikejones_hover, .artists-mikejones.mikejones-hover {
+  background-position: 0 -864px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mop {
+  background-position: 0 -23760px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-mop:hover, .artists-mop.mop_hover, .artists-mop.mop-hover {
+  background-position: 0 -9792px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-nas {
+  background-position: 0 -25200px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-nas:hover, .artists-nas.nas_hover, .artists-nas.nas-hover {
+  background-position: 0 -9936px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-natedogg {
+  background-position: 0 -14256px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-natedogg:hover, .artists-natedogg.natedogg_hover, .artists-natedogg.natedogg-hover {
+  background-position: 0 -2304px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-noreaga {
+  background-position: 0 -26784px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-noreaga:hover, .artists-noreaga.noreaga_hover, .artists-noreaga.noreaga-hover {
+  background-position: 0 -16848px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-odb {
+  background-position: 0 -13680px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-odb:hover, .artists-odb.odb_hover, .artists-odb.odb-hover {
+  background-position: 0 -432px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-oj {
+  background-position: 0 -23328px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-oj:hover, .artists-oj.oj_hover, .artists-oj.oj-hover {
+  background-position: 0 -8208px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pharrell {
+  background-position: 0 -20016px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pharrell:hover, .artists-pharrell.pharrell_hover, .artists-pharrell.pharrell-hover {
+  background-position: 0 -6336px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pill {
+  background-position: 0 -19584px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pill:hover, .artists-pill.pill_hover, .artists-pill.pill-hover {
+  background-position: 0 -10224px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pimpc {
+  background-position: 0 -24480px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pimpc:hover, .artists-pimpc.pimpc_hover, .artists-pimpc.pimpc-hover {
+  background-position: 0 -13248px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pitbull {
+  background-position: 0 -16416px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pitbull:hover, .artists-pitbull.pitbull_hover, .artists-pitbull.pitbull-hover {
+  background-position: 0 -8064px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-projectpat {
+  background-position: 0 -19440px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-projectpat:hover, .artists-projectpat.projectpat_hover, .artists-projectpat.projectpat-hover {
+  background-position: 0 -3312px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pushat {
+  background-position: 0 -18288px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-pushat:hover, .artists-pushat.pushat_hover, .artists-pushat.pushat-hover {
+  background-position: 0 -5616px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-raekwon {
+  background-position: 0 -15264px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-raekwon:hover, .artists-raekwon.raekwon_hover, .artists-raekwon.raekwon-hover {
+  background-position: 0 -2880px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-redman {
+  background-position: 0 -27216px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-redman:hover, .artists-redman.redman_hover, .artists-redman.redman-hover {
+  background-position: 0 -20736px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ross {
+  background-position: 0 -13968px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ross:hover, .artists-ross.ross_hover, .artists-ross.ross-hover {
+  background-position: 0 -11808px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-seanprice {
+  background-position: 0 -24336px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-seanprice:hover, .artists-seanprice.seanprice_hover, .artists-seanprice.seanprice-hover {
+  background-position: 0 -10512px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-snoop {
+  background-position: 0 -25920px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-snoop:hover, .artists-snoop.snoop_hover, .artists-snoop.snoop-hover {
+  background-position: 0 -14832px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-soulja {
+  background-position: 0 -22896px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-soulja:hover, .artists-soulja.soulja_hover, .artists-soulja.soulja-hover {
+  background-position: 0 -6912px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-swizz {
+  background-position: 0 -22608px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-swizz:hover, .artists-swizz.swizz_hover, .artists-swizz.swizz-hover {
+  background-position: 0 -7056px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-thugga {
+  background-position: 0 -23040px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-thugga:hover, .artists-thugga.thugga_hover, .artists-thugga.thugga-hover {
+  background-position: 0 -8928px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ti {
+  background-position: 0 -20448px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-ti:hover, .artists-ti.ti_hover, .artists-ti.ti-hover {
+  background-position: 0 -9072px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tooshort {
+  background-position: 0 -18144px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tooshort:hover, .artists-tooshort.tooshort_hover, .artists-tooshort.tooshort-hover {
+  background-position: 0 -5328px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tpain {
+  background-position: 0 -21600px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tpain:hover, .artists-tpain.tpain_hover, .artists-tpain.tpain-hover {
+  background-position: 0 -8496px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-treysongz {
+  background-position: 0 -26064px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-treysongz:hover, .artists-treysongz.treysongz_hover, .artists-treysongz.treysongz-hover {
+  background-position: 0 -12816px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-trickdaddy {
+  background-position: 0 -17568px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-trickdaddy:hover, .artists-trickdaddy.trickdaddy_hover, .artists-trickdaddy.trickdaddy-hover {
+  background-position: 0 -3600px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tupac {
+  background-position: 0 -21024px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tupac:hover, .artists-tupac.tupac_hover, .artists-tupac.tupac-hover {
+  background-position: 0 -6192px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-twochainz {
+  background-position: 0 -14976px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-twochainz:hover, .artists-twochainz.twochainz_hover, .artists-twochainz.twochainz-hover {
+  background-position: 0 -1152px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tyga {
+  background-position: 0 -25056px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-tyga:hover, .artists-tyga.tyga_hover, .artists-tyga.tyga-hover {
+  background-position: 0 -7488px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-vado {
+  background-position: 0 -21312px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-vado:hover, .artists-vado.vado_hover, .artists-vado.vado-hover {
+  background-position: 0 -10080px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-waka {
+  background-position: 0 -20160px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-waka:hover, .artists-waka.waka_hover, .artists-waka.waka-hover {
+  background-position: 0 -4464px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-weezy {
+  background-position: 0 -15552px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-weezy:hover, .artists-weezy.weezy_hover, .artists-weezy.weezy-hover {
+  background-position: 0 -1296px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-willsmith {
+  background-position: 0 -19296px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-willsmith:hover, .artists-willsmith.willsmith_hover, .artists-willsmith.willsmith-hover {
+  background-position: 0 -4752px;
+}
+
+/* line 60, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-wiz {
+  background-position: 0 -25632px;
+}
+/* line 43, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.artists-wiz:hover, .artists-wiz.wiz_hover, .artists-wiz.wiz-hover {
+  background-position: 0 -12240px;
+}

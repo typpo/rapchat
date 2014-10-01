@@ -26,8 +26,14 @@ $(function() {
   });
 
   // Rap buttons
-  $('#rapbuttons input[type="button"]').on('click', function() {
-    firebase.push({name: name, sticker: $(this).val()});
+  STICKERS.forEach(function(sticker) {
+    var display = sticker.audio.slice(5, sticker.audio.indexOf('.'));
+    $('<button>').text(display).data('slug', sticker.slug).appendTo($('#rapbuttons'));
+  });
+
+
+  $('#rapbuttons button').on('click', function() {
+    firebase.push({name: name, sticker: $(this).text(), slug: $(this).data('slug')});
   });
 
   $('#clear').on('click', function() {
@@ -44,7 +50,7 @@ $(function() {
     var message = snapshot.val();
     console.log(message);
     if (message.sticker) {
-      newSticker(message.sticker);
+      newSticker(message.sticker, message.slug);
     } else {
       newMessage(message.name, message.text);
     }
@@ -55,13 +61,12 @@ $(function() {
     $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
   }
 
-  function newSticker(sticker) {
+  function newSticker(sticker, slug) {
     var audio = $('<audio>');
     $('<source>').attr('src', 'oggs/' + sticker + '.ogg').appendTo(audio);
     $('#messages').append(audio);
 
-    var artist = sticker.slice(0, sticker.indexOf('_'));
-    $('<p>').html('<span class="artists-' + artist + '"></span>').appendTo($('#messages'));
+    $('<p>').html('<div class="sticker artists-' + slug + '"></div>').appendTo($('#messages'));
     $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 
     audio[0].play();
