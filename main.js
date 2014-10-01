@@ -2,8 +2,11 @@ $(function() {
   var room = getQueryParam('r') || 'public';
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
+  // Initial values
   $('#room').val(room);
+  $('#name').val(prompt("What's your name?", 'anon' + parseInt(Math.random()*1000)));
 
+  // Keydown listeners
   $('#message').keypress(function (e) {
     if (e.keyCode == 13) {
       var name = $('#name').val();
