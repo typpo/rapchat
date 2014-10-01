@@ -3,13 +3,13 @@ var BACK_HISTORY_MS = 60 * 1000;
 
 $(function() {
   var room = getQueryParam('r') || 'public';
-  var defaultName = 'anon' + parseInt(Math.random()*1000);
+  var currentName = 'anon' + parseInt(Math.random()*1000);
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
   // Initial values
-  $('#name').val(defaultName);
+  $('#name').val(currentName);
   $('#room').val(room);
-  firebase.push({name: defaultName, status: 'JOINED'});
+  firebase.push({name: currentName, status: 'JOINED'});
 
   // Keydown listeners
   $('#message').keypress(function (e) {
@@ -18,18 +18,36 @@ $(function() {
       var text = $('#message').val();
       if (text === '/clear') {
         $('#clear').trigger('click');
+        $('#message').val('');
         return;
       }
       firebase.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
       $('#message').val('');
+
+      $('#message').attr('disabled', true);
+      setTimeout(function() {
+        $('#message').removeAttr('disabled');
+        $('#message').focus();
+      }, 1000);
     }
   });
   $('#message').focus();
+
+  $('#name').change(function() {
+    var oldName = currentName;
+    currentName = $('#name').val();
+    firebase.push({name: oldName, newname: currentName, status: 'NAMECHANGE'});
+  });
 
   $('#room').keypress(function (e) {
     if (e.keyCode == 13) {
       window.location.href = '?r=' + $('#room').val();
     }
+  });
+
+  // Other listeners
+  $(window).bind('beforeunload', function(){
+    firebase.push({name: currentName, status: 'QUIT'});
   });
 
   // Rap buttons
@@ -47,6 +65,11 @@ $(function() {
       slug: $(this).data('slug'),
       ts: Firebase.ServerValue.TIMESTAMP
     });
+
+    $('#rapbuttons button').attr('disabled', true);
+    setTimeout(function() {
+      $('#rapbuttons button').removeAttr('disabled');
+    }, 650);
   });
 
   $('#clear').on('click', function() {
@@ -73,6 +96,13 @@ $(function() {
       switch(message.status) {
         case 'JOINED':
           newMessage(message.name, 'has joined');
+          break;
+        case 'QUIT':
+          newMessage(message.name, 'has quit');
+          break;
+        case 'NAMECHANGE':
+          newMessage(message.name, 'is now known as ' + message.newname);
+          break;
       }
     } else if (message.sticker) {
       // If it's in the past but we still want to show it, don't play noise.
