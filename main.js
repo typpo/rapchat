@@ -1,4 +1,3 @@
-
 $(function() {
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/');
 
@@ -6,7 +5,7 @@ $(function() {
     if (e.keyCode == 13) {
       var name = $('#name').val();
       var text = $('#message').val();
-      firebase.set({name: name, text: text});
+      firebase.push({name: name, text: text});
       $('#message').val('');
     }
   });
