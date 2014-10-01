@@ -9,6 +9,8 @@
 .sticker {
   width: 140px;
   height: 140px;
+
+  cursor: pointer;
 }
 
 #message {
