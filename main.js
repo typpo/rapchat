@@ -93,7 +93,7 @@ $(function() {
     $('#messages').append(audio);
 
     var sticker = $('<div class="sticker artists-' + slug + '"></div>');
-    $('<p>').append(sticker).appendTo($('#messages'));
+    $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
     $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 
     if (!noPlay) {
