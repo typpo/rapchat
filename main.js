@@ -100,13 +100,13 @@ $(function() {
     if (message.status) {
       switch(message.status) {
         case 'JOINED':
-          newMessage(message.name, 'has joined');
+          newAction(message.name, 'has joined');
           break;
         case 'QUIT':
-          newMessage(message.name, 'has quit');
+          newAction(message.name, 'has quit');
           break;
         case 'NAMECHANGE':
-          newMessage(message.name, 'is now known as ' + message.newname);
+          newAction(message.name, 'is now known as ' + message.newname);
           break;
       }
     } else if (message.sticker) {
@@ -115,11 +115,15 @@ $(function() {
     } else {
       newMessage(message.name, message.text);
     }
+    scrollDown();
   });
 
   function newMessage(name, text) {
     $('<p>').text(name + ': ' + text).appendTo($('#messages'));
-    $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
+  }
+
+  function newAction(name, text) {
+    $('<p>').text(name + ' ' + text).appendTo($('#messages'));
   }
 
   function newSticker(name, sticker, slug, noPlay) {
@@ -129,7 +133,6 @@ $(function() {
 
     var sticker = $('<div class="sticker artists-' + slug + '"></div>');
     $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
-    $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 
     if (!noPlay) {
       audio[0].play();
@@ -146,4 +149,8 @@ function getQueryParam(name) {
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
   results = regex.exec(location.search);
   return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function scrollDown() {
+  $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 }
