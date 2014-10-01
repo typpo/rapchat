@@ -60,7 +60,8 @@ $(function() {
     $('<source>').attr('src', 'oggs/' + sticker + '.ogg').appendTo(audio);
     $('#messages').append(audio);
 
-    $('<p>').html('<em>(' + sticker + ')</em>').appendTo($('#messages'));
+    var artist = sticker.slice(0, sticker.indexOf('_'));
+    $('<p>').html('<span class="artists-' + artist + '"></span>').appendTo($('#messages'));
     $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 
     audio[0].play();
