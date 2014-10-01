@@ -2,9 +2,8 @@
 var BACK_HISTORY_MS = 60 * 1000;
 
 $(function() {
-  var room = getQueryParam('r') || localStorage['preferredRoom'] || 'public';
-  localStorage['preferredRoom'] = room;
-  var currentName = localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
+  var room = getQueryParam('r') || 'public';
+  var currentName = getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
   // Initial values
