@@ -7,7 +7,6 @@ $(function() {
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
   // Initial values
-  //$('#name').val(prompt("What's your name?", defaultName));
   $('#name').val(defaultName);
   $('#room').val(room);
 
