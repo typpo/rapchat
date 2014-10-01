@@ -1,5 +1,8 @@
 $(function() {
-  var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/');
+  var room = getQueryParam('r') || 'public';
+  var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
+
+  $('#room').val(room);
 
   $('#message').keypress(function (e) {
     if (e.keyCode == 13) {
@@ -7,6 +10,12 @@ $(function() {
       var text = $('#message').val();
       firebase.push({name: name, text: text});
       $('#message').val('');
+    }
+  });
+
+  $('#room').keypress(function (e) {
+    if (e.keyCode == 13) {
+      window.location.href = '/?r=' + $('#room').val();
     }
   });
 
@@ -40,3 +49,10 @@ $(function() {
     audio[0].play();
   }
 });
+
+function getQueryParam(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
