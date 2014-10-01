@@ -1,10 +1,12 @@
+var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
+
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
 
 $(function() {
   var room = getQueryParam('r') || 'public';
   var currentName = getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
-  var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
+  var firebase = new Firebase(BASE_FIREBASE_URL + room);
 
   // Initial values
   $('#name').val(currentName);
@@ -141,6 +143,27 @@ $(function() {
       audio[0].play();
     });
   }
+
+  // User list/presence stuff
+  // TODO list nicks
+  // see https://www.firebase.com/blog/2013-06-17-howto-build-a-presence-system.html
+  var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
+  var userRef = listRef.push();
+
+  // Add ourselves to presence list when online.
+  var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
+  presenceRef.on('value', function(snap) {
+    if (snap.val()) {
+      userRef.set(true);
+      // Remove ourselves when we disconnect.
+      userRef.onDisconnect().remove();
+    }
+  });
+
+  // Number of online users is the number of objects in the presence list.
+  listRef.on('value', function(snap) {
+    $('#onlineCount').text(snap.numChildren());
+  });
 });
 
 function getQueryParam(name) {
