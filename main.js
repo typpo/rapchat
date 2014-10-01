@@ -13,7 +13,7 @@ $(function() {
   firebase.push({name: currentName, status: 'JOINED'});
 
   // Keydown listeners
-  $('#message').keypress(function (e) {
+  $('#message').keypress(function(e) {
     if (e.keyCode == 13) {
       var name = $('#name').val();
       var text = $('#message').val();
@@ -41,14 +41,14 @@ $(function() {
     localStorage['preferredName'] = currentName;
   });
 
-  $('#room').keypress(function (e) {
+  $('#room').keypress(function(e) {
     if (e.keyCode == 13) {
       window.location.href = '?r=' + $('#room').val();
     }
   });
 
   // Other listeners
-  $(window).bind('beforeunload', function(){
+  $(window).bind('beforeunload', function() {
     firebase.push({name: currentName, status: 'QUIT'});
   });
 
