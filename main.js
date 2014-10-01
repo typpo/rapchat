@@ -30,7 +30,7 @@ $(function() {
       setTimeout(function() {
         $('#message').removeAttr('disabled');
         $('#message').focus();
-      }, 1000);
+      }, 100);
     }
   });
   $('#message').focus();
