@@ -1,3 +1,6 @@
+// Chats and stickers to show in the past
+var BACK_HISTORY_MS = 10 * 1000;
+
 $(function() {
   var room = getQueryParam('r') || 'public';
   var defaultName = 'anon' + parseInt(Math.random()*1000);
@@ -52,7 +55,7 @@ $(function() {
   // Firebase and chat stuff
   firebase.on('child_added', function(snapshot) {
     var message = snapshot.val();
-    if (message.ts < new Date().getTime() - 5000) {
+    if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
       return;
     }
     console.log(message);
