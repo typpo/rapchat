@@ -2,8 +2,9 @@
 var BACK_HISTORY_MS = 60 * 1000;
 
 $(function() {
-  var room = getQueryParam('r') || 'public';
-  var currentName = 'anon' + parseInt(Math.random()*1000);
+  var room = getQueryParam('r') || localStorage['preferredRoom'] || 'public';
+  localStorage['preferredRoom'] = room;
+  var currentName = localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
   // Initial values
@@ -37,6 +38,7 @@ $(function() {
     var oldName = currentName;
     currentName = $('#name').val();
     firebase.push({name: oldName, newname: currentName, status: 'NAMECHANGE'});
+    localStorage['preferredName'] = currentName;
   });
 
   $('#room').keypress(function (e) {
@@ -78,7 +80,10 @@ $(function() {
   });
 
   $('#changeRoom').on('click', function() {
-    window.location.href = '?r=' + prompt('Where to?', room);
+    var newRoom = prompt('Where to?', room);
+    if (newRoom && newRoom !== room) {
+      window.location.href = '?r=' + newRoom;
+    }
   });
 
   // Firebase and chat stuff
