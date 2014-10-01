@@ -1,10 +1,12 @@
 $(function() {
   var room = getQueryParam('r') || 'public';
+  var defaultName = 'anon' + parseInt(Math.random()*1000);
   var firebase = new Firebase('https://kqw8tijfs91.firebaseio-demo.com/' + room);
 
   // Initial values
+  //$('#name').val(prompt("What's your name?", defaultName));
+  $('#name').val(defaultName);
   $('#room').val(room);
-  $('#name').val(prompt("What's your name?", 'anon' + parseInt(Math.random()*1000)));
 
   // Keydown listeners
   $('#message').keypress(function (e) {
@@ -15,17 +17,29 @@ $(function() {
       $('#message').val('');
     }
   });
+  $('#message').focus();
 
   $('#room').keypress(function (e) {
     if (e.keyCode == 13) {
-      window.location.href = '/?r=' + $('#room').val();
+      window.location.href = '?r=' + $('#room').val();
     }
   });
 
+  // Rap buttons
   $('#rapbuttons input[type="button"]').on('click', function() {
     firebase.push({name: name, sticker: $(this).val()});
   });
 
+  $('#clear').on('click', function() {
+    firebase.remove();
+    $('#messages').empty();
+  });
+
+  $('#changeRoom').on('click', function() {
+    window.location.href = '?r=' + prompt('Where to?', room);
+  });
+
+  // Firebase and chat stuff
   firebase.on('child_added', function(snapshot) {
     var message = snapshot.val();
     console.log(message);
