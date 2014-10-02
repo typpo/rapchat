@@ -129,7 +129,10 @@ $(function() {
 
   function newSticker(name, sticker, slug, noPlay) {
     var audio = $('<audio>');
-    $('<source>').attr('src', 'oggs/' + sticker + '.ogg').appendTo(audio);
+    $('<source>').attr('src', 'oggs/' + sticker + '.ogg')
+      .attr('type', 'audio/ogg').appendTo(audio);
+    $('<source>').attr('src', 'mp3s/' + sticker + '.mp3')
+      .attr('type', 'audio/mp3').appendTo(audio);
     $('#messages').append(audio);
 
     var sticker = $('<div class="sticker artists-' + slug + '"></div>');
