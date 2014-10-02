@@ -112,8 +112,8 @@ $(function() {
       });
       userRef.set({name: currentName});
     }
-  }
     localStorage['preferredName'] = currentName;
+  }
   messagesRef.endAt().limit(MESSAGE_LIMIT).on('child_added', function(snapshot) {
     var message = snapshot.val();
     var partOfHistory = false;
