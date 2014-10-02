@@ -99,7 +99,6 @@ $(function() {
     } else if (message.ts < new Date().getTime() - 5000) {
       partOfHistory = true;
     }
-    console.log(message);
 
     if (message.status) {
       switch(message.status) {
@@ -160,7 +159,7 @@ $(function() {
   var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
   presenceRef.on('value', function(snap) {
     if (snap.val()) {
-      userRef.set(true);
+      userRef.set({name: currentName});
       // Remove ourselves when we disconnect.
       userRef.onDisconnect().remove();
     }
@@ -169,7 +168,16 @@ $(function() {
   // Number of online users is the number of objects in the presence list.
   listRef.on('value', function(snap) {
     $('#onlineCount').text(snap.numChildren());
-    console.log(snap);
+    var onlines = [];
+    snap.forEach(function(userPresenceSnap) {
+      var userPresence = userPresenceSnap.val();
+      if (userPresence.name) {
+        onlines.push(userPresence.name);
+      } else {
+        onlines.push('?');
+      }
+    });
+    $('#onlineList').text(onlines.join(', '));
   });
 });
 
