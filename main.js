@@ -14,7 +14,7 @@ $(function() {
   // Initial values
   $('#name').val(currentName);
   $('#room').val(room);
-  messagesRef.push({name: currentName, status: 'JOINED'});
+  messagesRef.push({name: currentName, status: 'JOINED', ts: Firebase.ServerValue.TIMESTAMP});
 
   // Keydown listeners
   $('#message').keypress(function(e) {
@@ -41,7 +41,7 @@ $(function() {
   $('#name').change(function() {
     var oldName = currentName;
     currentName = $('#name').val();
-    messagesRef.push({name: oldName, newname: currentName, status: 'NAMECHANGE'});
+    messagesRef.push({name: oldName, newname: currentName, status: 'NAMECHANGE', ts: Firebase.ServerValue.TIMESTAMP});
     localStorage['preferredName'] = currentName;
   });
 
@@ -53,7 +53,7 @@ $(function() {
 
   // Other listeners
   $(window).bind('beforeunload', function() {
-    messagesRef.push({name: currentName, status: 'QUIT'});
+    messagesRef.push({name: currentName, status: 'QUIT', ts: Firebase.ServerValue.TIMESTAMP});
   });
 
   // Rap buttons
@@ -94,9 +94,10 @@ $(function() {
   messagesRef.endAt().limit(MESSAGE_LIMIT).on('child_added', function(snapshot) {
     var message = snapshot.val();
     var partOfHistory = false;
+    console.log(message);
     if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
       return;
-    } else if (message.ts < new Date().getTime() - 5000) {
+    } else if (new Date().getTime() - message.ts > 5000) {
       partOfHistory = true;
     }
 
