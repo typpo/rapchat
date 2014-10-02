@@ -8,8 +8,14 @@ var MESSAGE_LIMIT = 300;
 
 $(function() {
   var room = getQueryParam('r') || 'public';
-  var currentName = getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
   var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
+
+  // Naming stuff
+  var onlineMap = {};
+  var onlineListRetrievedOnce = false;
+  var currentName;
+  // TODO delay this initial name setting until after first name list is retrieved, to prevent people from stealing names with n param/localstorage.
+  changeNameTo(getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000));
 
   // Initial values
   $('#name').val(currentName);
@@ -39,10 +45,7 @@ $(function() {
   $('#message').focus();
 
   $('#name').change(function() {
-    var oldName = currentName;
-    currentName = $('#name').val();
-    messagesRef.push({name: oldName, newname: currentName, status: 'NAMECHANGE', ts: Firebase.ServerValue.TIMESTAMP});
-    localStorage['preferredName'] = currentName;
+    changeNameTo($('#name').val());
   });
 
   $('#room').keypress(function(e) {
@@ -91,6 +94,23 @@ $(function() {
   });
 
   // Firebase and chat stuff
+  function changeNameTo(newName) {
+    var oldName = currentName;
+    if (onlineMap[newName]) {
+      alert('That name is already being used.');
+      newName = 'anon' + parseInt(Math.random()*1000);
+    }
+    currentName = newName;
+    if (oldName) {
+      messagesRef.push({
+        name: oldName,
+        newname: currentName,
+        status: 'NAMECHANGE',
+        ts: Firebase.ServerValue.TIMESTAMP
+      });
+    }
+  }
+    localStorage['preferredName'] = currentName;
   messagesRef.endAt().limit(MESSAGE_LIMIT).on('child_added', function(snapshot) {
     var message = snapshot.val();
     var partOfHistory = false;
@@ -170,15 +190,18 @@ $(function() {
   listRef.on('value', function(snap) {
     $('#onlineCount').text(snap.numChildren());
     var onlines = [];
+    onlineMap = {};
     snap.forEach(function(userPresenceSnap) {
       var userPresence = userPresenceSnap.val();
       if (userPresence.name) {
         onlines.push(userPresence.name);
+        onlineMap[userPresence.name] = true;
       } else {
         onlines.push('?');
       }
     });
     $('#onlineList').text(onlines.join(', '));
+    onlineListRetrievedOnce = true;
   });
 });
 
