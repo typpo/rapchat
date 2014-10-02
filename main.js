@@ -9,7 +9,7 @@ var MESSAGE_LIMIT = 300;
 $(function() {
   var room = getQueryParam('r') || 'public';
   var currentName = getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
-  var messagesRef = new Firebase(BASE_FIREBASE_URL + room).limit(MESSAGE_LIMIT);
+  var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
 
   // Initial values
   $('#name').val(currentName);
@@ -91,7 +91,7 @@ $(function() {
   });
 
   // Firebase and chat stuff
-  messagesRef.on('child_added', function(snapshot) {
+  messagesRef.endAt().limit(MESSAGE_LIMIT).on('child_added', function(snapshot) {
     var message = snapshot.val();
     var partOfHistory = false;
     if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
@@ -169,6 +169,7 @@ $(function() {
   // Number of online users is the number of objects in the presence list.
   listRef.on('value', function(snap) {
     $('#onlineCount').text(snap.numChildren());
+    console.log(snap);
   });
 });
 
