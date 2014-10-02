@@ -3,15 +3,18 @@ var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
 
+// Extent of message history, per room.
+var MESSAGE_LIMIT = 300;
+
 $(function() {
   var room = getQueryParam('r') || 'public';
   var currentName = getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000);
-  var firebase = new Firebase(BASE_FIREBASE_URL + room);
+  var messagesRef = new Firebase(BASE_FIREBASE_URL + room).limit(MESSAGE_LIMIT);
 
   // Initial values
   $('#name').val(currentName);
   $('#room').val(room);
-  firebase.push({name: currentName, status: 'JOINED'});
+  messagesRef.push({name: currentName, status: 'JOINED'});
 
   // Keydown listeners
   $('#message').keypress(function(e) {
@@ -23,7 +26,7 @@ $(function() {
         $('#message').val('');
         return;
       }
-      firebase.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
+      messagesRef.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
       $('#message').val('');
 
       $('#message').attr('disabled', true);
@@ -38,7 +41,7 @@ $(function() {
   $('#name').change(function() {
     var oldName = currentName;
     currentName = $('#name').val();
-    firebase.push({name: oldName, newname: currentName, status: 'NAMECHANGE'});
+    messagesRef.push({name: oldName, newname: currentName, status: 'NAMECHANGE'});
     localStorage['preferredName'] = currentName;
   });
 
@@ -50,7 +53,7 @@ $(function() {
 
   // Other listeners
   $(window).bind('beforeunload', function() {
-    firebase.push({name: currentName, status: 'QUIT'});
+    messagesRef.push({name: currentName, status: 'QUIT'});
   });
 
   // Rap buttons
@@ -62,7 +65,7 @@ $(function() {
 
   $('#rapbuttons button').on('click', function() {
     var name = $('#name').val();
-    firebase.push({
+    messagesRef.push({
       name: name,
       sticker: $(this).text(),
       slug: $(this).data('slug'),
@@ -76,7 +79,7 @@ $(function() {
   });
 
   $('#clear').on('click', function() {
-    firebase.remove();
+    messagesRef.remove();
     $('#messages').empty();
   });
 
@@ -88,7 +91,7 @@ $(function() {
   });
 
   // Firebase and chat stuff
-  firebase.on('child_added', function(snapshot) {
+  messagesRef.on('child_added', function(snapshot) {
     var message = snapshot.val();
     var partOfHistory = false;
     if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
