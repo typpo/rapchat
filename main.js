@@ -4,7 +4,7 @@ var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
 var BACK_HISTORY_MS = 60 * 1000;
 
 // Extent of message history, per room.
-var MESSAGE_LIMIT = 300;
+var MESSAGE_LIMIT = 50;
 
 $(function() {
   var room = getQueryParam('r') || 'public';
@@ -154,22 +154,30 @@ $(function() {
   }
 
   function newSticker(name, sticker, slug, noPlay) {
+    /*
     var audio = $('<audio>');
     $('<source>').attr('src', 'oggs/' + sticker + '.ogg')
       .attr('type', 'audio/ogg').appendTo(audio);
     $('<source>').attr('src', 'mp3s/' + sticker + '.mp3')
       .attr('type', 'audio/mp3').appendTo(audio);
     $('#messages').append(audio);
+    */
+
+    var sound = new Howl({
+      urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
+      volume: 1
+      // TODO highlight guy while the sound is playing, then gray out onend
+    });
 
     var sticker = $('<div class="sticker artists-' + slug + '"></div>');
     $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
 
     if (!noPlay) {
-      audio[0].play();
+      sound.play();
     }
 
     sticker.on('click', function() {
-      audio[0].play();
+      sound.play();
     });
   }
 
