@@ -9,6 +9,8 @@ var MESSAGE_LIMIT = 300;
 $(function() {
   var room = getQueryParam('r') || 'public';
   var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
+  var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
+  var userRef = listRef.push();
 
   // Naming stuff
   var onlineMap = {};
@@ -108,6 +110,7 @@ $(function() {
         status: 'NAMECHANGE',
         ts: Firebase.ServerValue.TIMESTAMP
       });
+      userRef.set({name: currentName});
     }
   }
     localStorage['preferredName'] = currentName;
@@ -171,10 +174,6 @@ $(function() {
   }
 
   // User list/presence stuff
-  // TODO list nicks
-  // see https://www.firebase.com/blog/2013-06-17-howto-build-a-presence-system.html
-  var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
-  var userRef = listRef.push();
 
   // Add ourselves to presence list when online.
   var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
