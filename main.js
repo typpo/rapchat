@@ -41,7 +41,10 @@ function setupDomListeners() {
   $('#message').keypress(function(e) {
     if (e.keyCode == 13) {
       var name = $('#name').val();
-      var text = $('#message').val();
+      var text = $('#message').val().trim();
+      if (text === '') {
+        return;
+      }
       if (text === '/clear') {
         $('#clear').trigger('click');
         $('#message').val('');
