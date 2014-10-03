@@ -6,12 +6,12 @@ var BACK_HISTORY_MS = 60 * 1000;
 // Extent of message history, per room.
 var MESSAGE_LIMIT = 50;
 
-$(function() {
-  var room = getQueryParam('r') || 'public';
-  var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
-  var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
-  var userRef = listRef.push();
+var room = getQueryParam('r') || 'public';
+var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
+var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
+var userRef = listRef.push();
 
+$(function() {
   // Naming stuff
   var onlineMap = {};
   var onlineListRetrievedOnce = false;
@@ -24,47 +24,13 @@ $(function() {
   $('#room').val(room);
   messagesRef.push({name: currentName, status: 'JOINED', ts: Firebase.ServerValue.TIMESTAMP});
 
-  // Keydown listeners
-  $('#message').keypress(function(e) {
-    if (e.keyCode == 13) {
-      var name = $('#name').val();
-      var text = $('#message').val();
-      if (text === '/clear') {
-        $('#clear').trigger('click');
-        $('#message').val('');
-        return;
-      }
-      messagesRef.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
-      $('#message').val('');
-
-      $('#message').attr('disabled', true);
-      setTimeout(function() {
-        $('#message').removeAttr('disabled');
-        $('#message').focus();
-      }, 100);
-    }
-  });
-  $('#message').focus();
-
-  $('#name').change(function() {
-    changeNameTo($('#name').val());
-  });
-
-  $('#room').keypress(function(e) {
-    if (e.keyCode == 13) {
-      window.location.href = '?r=' + $('#room').val();
-    }
-  });
-
-  // Other listeners
-  $(window).bind('beforeunload', function() {
-    messagesRef.push({name: currentName, status: 'QUIT', ts: Firebase.ServerValue.TIMESTAMP});
-  });
+  setupDomListeners();
 
   // Rap buttons
   STICKERS.forEach(function(sticker) {
     var display = sticker.audio.slice(5, sticker.audio.indexOf('.'));
-    $('<button>').text(display).data('slug', sticker.slug).appendTo($('#rapbuttons'));
+    $('<button>')
+        .text(display).data('slug', sticker.slug).appendTo($('#rapbuttons'));
   });
 
 
@@ -81,18 +47,6 @@ $(function() {
     setTimeout(function() {
       $('#rapbuttons button').removeAttr('disabled');
     }, 650);
-  });
-
-  $('#clear').on('click', function() {
-    messagesRef.remove();
-    $('#messages').empty();
-  });
-
-  $('#changeRoom').on('click', function() {
-    var newRoom = prompt('Where to?', room);
-    if (newRoom && newRoom !== room) {
-      window.location.href = '?r=' + newRoom;
-    }
   });
 
   // Firebase and chat stuff
@@ -213,6 +167,57 @@ $(function() {
     onlineListRetrievedOnce = true;
   });
 });
+
+function setupDomListeners() {
+  // Keydown listeners
+  $('#message').keypress(function(e) {
+    if (e.keyCode == 13) {
+      var name = $('#name').val();
+      var text = $('#message').val();
+      if (text === '/clear') {
+        $('#clear').trigger('click');
+        $('#message').val('');
+        return;
+      }
+      messagesRef.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
+      $('#message').val('');
+
+      $('#message').attr('disabled', true);
+      setTimeout(function() {
+        $('#message').removeAttr('disabled');
+        $('#message').focus();
+      }, 100);
+    }
+  });
+  $('#message').focus();
+
+  $('#name').change(function() {
+    changeNameTo($('#name').val());
+  });
+
+  $('#room').keypress(function(e) {
+    if (e.keyCode == 13) {
+      window.location.href = '?r=' + $('#room').val();
+    }
+  });
+
+  $('#clear').on('click', function() {
+    messagesRef.remove();
+    $('#messages').empty();
+  });
+
+  $('#changeRoom').on('click', function() {
+    var newRoom = prompt('Where to?', room);
+    if (newRoom && newRoom !== room) {
+      window.location.href = '?r=' + newRoom;
+    }
+  });
+
+  // Other listeners
+  $(window).bind('beforeunload', function() {
+    messagesRef.push({name: currentName, status: 'QUIT', ts: Firebase.ServerValue.TIMESTAMP});
+  });
+}
 
 function getQueryParam(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
