@@ -3,7 +3,7 @@ var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
 
-var DEFAULT_ROOM = 'test';
+var DEFAULT_ROOM = 'public';
 
 // Extent of message history, per room.
 var MESSAGE_LIMIT = 50;
