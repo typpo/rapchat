@@ -1,13 +1,27 @@
 body {
   font-family: "proxima-nova",Helvetica,sans-serif;
+  margin: 0;
+}
 
+.noscroll {
+  position:fixed;
+  overflow:hidden;
+}
+
+.onlineStatusContainer {
+  background-color: rgba(158, 42, 166, 0.74);
+  padding: 5px;
+  color: #fff;
+  font-size: 11px;
 }
 
 .messages {
-  background-color: #eee;
+  font-size: 12px;
+  background-color: #EFEFEF;
   height: 350px;
-  border: 1px solid #ccc;
+  border: 1px solid #3F3838;
   overflow-y: scroll;
+  padding-left: 5px;
 }
 
 .newAction {
@@ -25,6 +39,38 @@ body {
   width: 500px;
 }
 
+#inputs {
+  padding: 5px;
+  color: #fff;
+  background-color: rgba(69, 142, 112, 0.78);
+
+  font-size: 11px;
+}
+
+#inputs input {
+  width: 200px;
+}
+
+#inputs button {
+  width: 150px;
+}
+
+#inputs .messageInput {
+  width: 250px;
+}
+
+#rapbuttons {
+  background-color: #B6B3B3;
+  border: 1px solid #3F3838;
+  text-align: center;
+  padding-top: 5px;
+
+  height: 300px;
+  overflow-y: scroll;
+
+  /* TODO make this only as high as the screen allows */
+}
+
 #rapbuttons button {
   background: #fff;
   border: 1px solid #ccc;
@@ -34,13 +80,13 @@ body {
   margin: 0 0 0 -3px;
   padding: 11px 7px 10px;
   text-transform: uppercase;
+  cursor: pointer;
 
   margin: 1px;
-  width: 80px;
 }
 
 @media only screen
-and (max-width : 320px) {
+and (max-width : 620px) {
   .messages {
     height: 175px;
   }

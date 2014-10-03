@@ -6,26 +6,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="main.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="noscroll">
 
-<span id="onlineCount"></span> people online: <span id="onlineList"></span>
+<div class="onlineStatusContainer">
+  <span id="onlineCount"></span> people online: <span id="onlineList"></span>
+</div>
 <div id="messages" class="messages scrollbars">
 
 </div>
-
-<hr/>
 
 <!-- TODO volume control -->
 <!-- TODO text replacement -->
 <!-- TODO prettier buttons -->
 
-Chatroom: <input id="room" type="text" disabled />
-<input id="changeRoom" type="button" value="Change room"/>
-<br>
-Your name: <input id="name" type="text" placeholder="nickname" /><br>
-Message: <input id="message" type="text" placeholder="type something and hit enter" />
-
-<hr/>
+<div id="inputs">
+  <p>
+    <!--Room: <input id="changeRoom" type="button" value="Change room"/><br>-->
+    room:<br>
+    <input id="room" type="text" />
+  </p>
+  <p>
+    name:<br>
+    <input id="name" type="text" placeholder="nickname" /><br>
+  </p>
+  <p>
+    message:<br>
+    <input id="message" type="text" class="messageInput" placeholder="type something and hit enter" />
+  </p>
+</div>
 
 <div style="display:none">
   <input id="clear" type="button" value="Clear messages"/>
