@@ -1,13 +1,22 @@
 body {
   font-family: "proxima-nova",Helvetica,sans-serif;
+  margin: 0;
+}
 
+.onlineStatusContainer {
+  background-color: rgba(158, 42, 166, 0.74);
+  padding: 5px;
+  color: #fff;
+  font-size: 11px;
 }
 
 .messages {
-  background-color: #eee;
+  font-size: 12px;
+  background-color: #EFEFEF;
   height: 350px;
-  border: 1px solid #ccc;
+  border: 1px solid #3F3838;
   overflow-y: scroll;
+  padding-left: 5px;
 }
 
 .sticker {
@@ -19,6 +28,18 @@ body {
 
 #message {
   width: 500px;
+}
+
+#inputs input {
+  width: 200px;
+}
+
+#inputs button {
+  width: 150px;
+}
+
+#inputs .messageInput {
+  width: 250px;
 }
 
 #rapbuttons button {

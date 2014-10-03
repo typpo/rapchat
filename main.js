@@ -71,6 +71,7 @@ function setupDomListeners() {
     }
   });
 
+  // TODO move this functionality somewhere.  I removed this button.
   $('#changeRoom').on('click', function() {
     var newRoom = prompt('Where to?', room);
     if (newRoom && newRoom !== room) {
