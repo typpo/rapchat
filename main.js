@@ -149,7 +149,7 @@ function newMessage(name, text) {
 }
 
 function newAction(name, text) {
-  $('<p>').text(name + ' ' + text).appendTo($('#messages'));
+  $('<p>').text(name + ' ' + text).addClass('newAction').appendTo($('#messages'));
 }
 
 function newSticker(name, sticker, slug, noPlay) {
