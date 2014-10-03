@@ -3,6 +3,11 @@ body {
   margin: 0;
 }
 
+.noscroll {
+  position:fixed;
+  overflow:hidden;
+}
+
 .onlineStatusContainer {
   background-color: rgba(158, 42, 166, 0.74);
   padding: 5px;
