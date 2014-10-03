@@ -4,6 +4,9 @@ var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
 var BACK_HISTORY_MS = 60 * 1000;
 
 var DEFAULT_ROOM = 'public';
+if (~window.location.href.indexOf('localhost')) {
+  DEFAULT_ROOM = 'test';
+}
 
 // Extent of message history, per room.
 var MESSAGE_LIMIT = 50;
@@ -98,16 +101,28 @@ function setupStickerButtons() {
   // Create rap buttons
   STICKERS.forEach(function(sticker) {
     var display = sticker.audio.slice(5, sticker.audio.indexOf('.'));
-    $('<button>')
-        .text(display).data('slug', sticker.slug).appendTo($('#rapbuttons'));
+    var button = $('<button>')
+        .addClass('stickerButton')
+        .text(display).data('slug', sticker.slug);
+
+        /*
+    $('<span>').addClass('stickerWrapper sticker artists-bigsean')
+        .append(button)
+        .appendTo($('#rapbuttons'));
+        */
+    var sticker = $('<div class="sticker artists-' + sticker.slug + '">')
+        .data('slug', sticker.slug)
+        .data('sticker', display)
+        .append($('<span>').text(display))
+        .appendTo($('#rapbuttons'));
   });
 
   // Rap buttons handler
-  $('#rapbuttons button').on('click', function() {
+  $('#rapbuttons .sticker').on('click', function() {
     var name = $('#name').val();
     messagesRef.push({
       name: name,
-      sticker: $(this).text(),
+      sticker: $(this).data('sticker'),
       slug: $(this).data('slug'),
       ts: Firebase.ServerValue.TIMESTAMP
     });
@@ -163,7 +178,7 @@ function newSticker(name, sticker, slug, noPlay) {
     // TODO highlight person while the sound is playing, then gray out onend
   });
 
-  var sticker = $('<div class="sticker-wrapper"><div class="sticker artists-' + slug + '"></div></div>');
+  var sticker = $('<div class="sticker artists-' + slug + '"></div>');
   $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
