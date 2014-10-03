@@ -87,6 +87,9 @@ body {
   cursor: pointer;
 
   margin: 1px;
+
+  /* Overriden below for mobile */
+  font-size: 13px;
 }
 
 /* Mobile media queries */
@@ -102,6 +105,9 @@ and (max-width : 620px) {
     height: 300px;
     border: 1px solid #ccc;
     overflow-y: scroll;
+  }
+  #rapbuttons button {
+    font-size: 10px;
   }
   .sticker {
     zoom: 0.5;
