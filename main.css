@@ -22,10 +22,36 @@ and (max-width : 320px) {
     height: 175px;
   }
   #rapbuttons {
-    height: 200px;
+    height: 300px;
     border: 1px solid #ccc;
-    overflow-y: scroll;
   }
+  .sticker {
+    zoom: 0.5;
+  }
+}
+
+/* Scrollbarz */
+.scrollbars::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.scrollbars::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.scrollbars::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.scrollbars::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.scrollbars::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 8px;
 }
 
 .artists-sprite, .artists-actionbronson, .artists-akon, .artists-beaniesigel, .artists-bigboi, .artists-biggie, .artists-bigl, .artists-bigsean, .artists-birdman, .artists-bowwow, .artists-bunb, .artists-busta, .artists-camron, .artists-chiefkeef, .artists-chingy, .artists-currensy, .artists-dabrat, .artists-dannybrown, .artists-davidbanner, .artists-diddy, .artists-dizzee, .artists-djpaul, .artists-dmx, .artists-drake, .artists-drdre, .artists-drummaboy, .artists-e40, .artists-eazye, .artists-eminem, .artists-fatjoe, .artists-fiftycent, .artists-flava, .artists-freeway, .artists-frenchie, .artists-ghostface, .artists-grandmaster, .artists-gucci, .artists-hurricane, .artists-icecube, .artists-inspectahdeck, .artists-jadakiss, .artists-jarule, .artists-jayz, .artists-jazzypha, .artists-jd, .artists-jeezy, .artists-jimjones, .artists-juelz, .artists-juicyj, .artists-kanye, .artists-khaled, .artists-killermike, .artists-krsone, .artists-lilb, .artists-liljon, .artists-lilscrappy, .artists-lloydbanks, .artists-ludacris, .artists-mannie, .artists-mceight, .artists-mchammer, .artists-methodman, .artists-mikejones, .artists-mop, .artists-nas, .artists-natedogg, .artists-noreaga, .artists-odb, .artists-oj, .artists-pharrell, .artists-pill, .artists-pimpc, .artists-pitbull, .artists-projectpat, .artists-pushat, .artists-raekwon, .artists-redman, .artists-ross, .artists-seanprice, .artists-snoop, .artists-soulja, .artists-swizz, .artists-thugga, .artists-ti, .artists-tooshort, .artists-tpain, .artists-treysongz, .artists-trickdaddy, .artists-tupac, .artists-twochainz, .artists-tyga, .artists-vado, .artists-waka, .artists-weezy, .artists-willsmith, .artists-wiz {

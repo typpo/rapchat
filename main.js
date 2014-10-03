@@ -1,4 +1,4 @@
-var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
+var BASE_FIREBASE_URL = 'https://kqw8tijfs91_poo.firebaseio-demo.com/';
 
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
@@ -18,7 +18,8 @@ var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
 $(function() {
   // Naming stuff
   // TODO delay this initial name setting until after first name list is retrieved, to prevent people from stealing names with n param/localstorage.
-  changeNameTo(getQueryParam('n') || localStorage['preferredName'] || 'anon' + parseInt(Math.random()*1000));
+  changeNameTo(getQueryParam('n') || localStorage['preferredName']
+               || 'anon' + parseInt(Math.random()*1000));
 
   // Initial values
   $('#name').val(currentName);
@@ -153,10 +154,10 @@ function newSticker(name, sticker, slug, noPlay) {
   var sound = new Howl({
     urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
     volume: 1
-    // TODO highlight guy while the sound is playing, then gray out onend
+    // TODO highlight person while the sound is playing, then gray out onend
   });
 
-  var sticker = $('<div class="sticker artists-' + slug + '"></div>');
+  var sticker = $('<div class="sticker-wrapper"><div class="sticker artists-' + slug + '"></div></div>');
   $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
