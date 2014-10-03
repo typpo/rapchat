@@ -55,6 +55,7 @@ body {
   margin: 0 0 0 -3px;
   padding: 11px 7px 10px;
   text-transform: uppercase;
+  cursor: pointer;
 
   margin: 1px;
   width: 80px;
