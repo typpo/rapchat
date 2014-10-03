@@ -119,7 +119,9 @@ $(function() {
     var partOfHistory = false;
     console.log(message);
     if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
-      return;
+      //return;
+      // Show all past messages, up to MESSAGE_LIMIT.
+      partOfHistory = true;
     } else if (new Date().getTime() - message.ts > 5000) {
       partOfHistory = true;
     }
