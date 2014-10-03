@@ -31,7 +31,11 @@ body {
 }
 
 #inputs {
-  margin-left: 7px;
+  padding: 5px;
+  color: #fff;
+  background-color: #458E70;
+
+  font-size: 11px;
 }
 
 #inputs input {
@@ -46,6 +50,18 @@ body {
   width: 250px;
 }
 
+#rapbuttons {
+  background-color: #EDA1A1;
+  border: 1px solid #3F3838;
+  text-align: center;
+  padding-top: 5px;
+
+  height: 300px;
+  overflow-y: scroll;
+
+  /* TODO make this only as high as the screen allows */
+}
+
 #rapbuttons button {
   background: #fff;
   border: 1px solid #ccc;
@@ -58,7 +74,6 @@ body {
   cursor: pointer;
 
   margin: 1px;
-  width: 80px;
 }
 
 @media only screen
