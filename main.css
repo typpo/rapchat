@@ -16,12 +16,15 @@ body {
 }
 
 .messages {
-  font-size: 12px;
   background-color: #EFEFEF;
   height: 350px;
   border: 1px solid #3F3838;
   overflow-y: scroll;
-  padding-left: 5px;
+
+  /* These are overridden below for mobile */
+  font-size: 15px;
+  padding-left: 7px;
+  padding-top: 17px;
 }
 
 .newAction {
@@ -85,10 +88,14 @@ body {
   margin: 1px;
 }
 
+/* Mobile media queries */
 @media only screen
 and (max-width : 620px) {
   .messages {
     height: 175px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-top: 5px;
   }
   #rapbuttons {
     height: 300px;
