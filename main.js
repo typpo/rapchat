@@ -1,7 +1,9 @@
-var BASE_FIREBASE_URL = 'https://kqw8tijfs91_poo.firebaseio-demo.com/';
+var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
 
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
+
+var DEFAULT_ROOM = 'test';
 
 // Extent of message history, per room.
 var MESSAGE_LIMIT = 50;
@@ -9,7 +11,7 @@ var MESSAGE_LIMIT = 50;
 var currentName;
 var onlineMap = {};
 var onlineListRetrievedOnce = false;
-var room = getQueryParam('r') || 'public';
+var room = getQueryParam('r') || DEFAULT_ROOM;
 var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
 var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
 var userRef = listRef.push();
