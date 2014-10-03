@@ -47,7 +47,8 @@ body {
   color: #fff;
   background-color: rgba(69, 142, 112, 0.78);
 
-  font-size: 11px;
+  /* Overriden below for mobile */
+  font-size: 15px;
 }
 
 #inputs input {
@@ -104,6 +105,9 @@ and (max-width : 620px) {
   }
   .sticker {
     zoom: 0.5;
+  }
+  #inputs {
+    font-size: 11px;
   }
 }
 
