@@ -43,18 +43,18 @@ body {
 }
 
 #inputs {
-  padding: 5px;
   color: #fff;
   background-color: rgba(69, 142, 112, 0.78);
   margin-left: -5px;
 
   /* All below are overriden for mobile */
   font-size: 15px;
-  height: 95px;
+  height: 79px;
 }
 
 #inputs p {
   padding-left: 14px;
+  margin-top: 6px;
 }
 
 #inputs a {
@@ -152,8 +152,7 @@ and (max-width : 620px) {
   #inputs {
     font-size: 11px;
     height: 255px;
-
-    height: 79px;
+    height: 75px;
   }
 }
 
