@@ -161,8 +161,15 @@ function setupPresenceHandlers() {
   });
 }
 
-function newMessage(name, text) {
+function newMessage(name, text, playNotification) {
   $('<p>').text(name + ': ' + text).appendTo($('#messages'));
+  if (playNotification) {
+    var sound = new Howl({
+      urls: ['rapchat_notification.ogg'],
+      volume: 1,
+      autoplay: true
+    });
+  }
 }
 
 function newAction(name, text) {
@@ -173,7 +180,6 @@ function newSticker(name, sticker, slug, noPlay) {
   var sound = new Howl({
     urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
     volume: 1
-    // TODO highlight person while the sound is playing, then gray out onend
   });
 
   var sticker = $('<div class="sticker artists-' + slug + '"></div>');
