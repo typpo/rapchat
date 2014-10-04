@@ -6,13 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="main.css" rel="stylesheet"/>
 </head>
+
 <body class="noscroll">
 
 <div class="onlineStatusContainer">
   <span id="onlineCount"></span> people online: <span id="onlineList"></span>
 </div>
-<div id="messages" class="messages scrollbars">
 
+<div id="messages" class="messages scrollbars">
 </div>
 
 <!-- TODO volume control -->
@@ -20,18 +21,11 @@
 <!-- TODO prettier buttons -->
 
 <div id="inputs">
+  <input id="message" type="text" class="messageInput" placeholder="type something" />
   <p>
-    <!--Room: <input id="changeRoom" type="button" value="Change room"/><br>-->
-    room:<br>
-    <input id="room" type="text" />
-  </p>
-  <p>
-    name:<br>
-    <input id="name" type="text" placeholder="nickname" /><br>
-  </p>
-  <p>
-    message:<br>
-    <input id="message" type="text" class="messageInput" placeholder="type something and hit enter" />
+    <a id="changeName" href="#">change name</a>
+    &middot;
+    <a id="changeRoom" href="#">change room</a>
   </p>
 </div>
 

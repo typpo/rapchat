@@ -53,7 +53,7 @@ function setupDomListeners() {
         $('#message').val('');
         return;
       }
-      messagesRef.push({name: name, text: text, ts: Firebase.ServerValue.TIMESTAMP});
+      messagesRef.push({name: currentName, text: text, ts: Firebase.ServerValue.TIMESTAMP});
       $('#message').val('');
 
       $('#message').attr('disabled', true);
@@ -66,18 +66,14 @@ function setupDomListeners() {
   $('#message').focus();
 
   // Name change.
-  $('#name').change(function() {
-    changeNameTo($('#name').val());
-  });
-
-  // Room change.
-  $('#room').keypress(function(e) {
-    if (e.keyCode == 13) {
-      window.location.href = '?r=' + $('#room').val();
+  $('#changeName').on('click', function() {
+    var newName = prompt('New name?', currentName);
+    if (newName) {
+      changeNameTo(newName);
     }
   });
 
-  // TODO move this functionality somewhere.  I removed this button.
+  // Room change.
   $('#changeRoom').on('click', function() {
     var newRoom = prompt('Where to?', room);
     if (newRoom && newRoom !== room) {
@@ -121,7 +117,7 @@ function setupStickerButtons() {
   $('#rapbuttons .sticker').on('click', function() {
     var name = $('#name').val();
     messagesRef.push({
-      name: name,
+      name: currentName,
       sticker: $(this).data('sticker'),
       slug: $(this).data('slug'),
       ts: Firebase.ServerValue.TIMESTAMP
