@@ -21,6 +21,8 @@ var userRef = listRef.push();
 var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
 
 $(function() {
+  sizeEverything();
+
   // Naming stuff
   // TODO delay this initial name setting until after first name list is retrieved, to prevent people from stealing names with n param/localstorage.
   changeNameTo(getQueryParam('n') || localStorage['preferredName']
@@ -247,4 +249,12 @@ function getQueryParam(name) {
 
 function scrollDown() {
   $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
+}
+
+function sizeEverything() {
+  var fixedheight = $('#onlineStatusContainer').height() + $('#inputs').height();
+  var windowheight = $(window).height();
+
+  $('#messages').height((windowheight - fixedheight) * .40);
+  $('#rapbuttons').height((windowheight - fixedheight) * .60);
 }
