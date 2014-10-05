@@ -134,6 +134,9 @@ function setupStickerButtons() {
         .appendTo($('#rapbuttons'));
   });
 
+  // Add spacer
+  $('#rapbuttons').append($('<div>').addClass('spacer'));
+
   // Rap buttons handler
   $('#rapbuttons .sticker').on('click', function() {
     var name = $('#name').val();
@@ -275,8 +278,8 @@ function sizeEverything() {
 
   // TODO handle tiny dekstop window/resizes
   // TODO handle sizing better. Make sure it doesn't cut off last row of stickers.
-  $('#messages').height(parseInt((windowheight - fixedheight) * .40) - 20);
-  $('#rapbuttons').height(parseInt((windowheight - fixedheight) * .60) - 15);
+  $('#messages').height(parseInt((windowheight - fixedheight) * .40));
+  $('#rapbuttons').height(parseInt((windowheight - fixedheight) * .60));
 }
 
 function getQueryParam(name) {

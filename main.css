@@ -103,6 +103,11 @@ body {
   overflow-y: scroll;
 }
 
+#rapbuttons .spacer {
+  clear: both;
+  height: 50px;
+}
+
 .stickerButton {
   background: #fff;
   border: 1px solid #ccc;
