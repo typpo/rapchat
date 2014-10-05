@@ -82,6 +82,7 @@ function setupDomListeners() {
     }).blur(function() {
       $('#inputs').css('height', prevHeight);
       sizeEverything();
+      scrollDown();
     });
   }
 
