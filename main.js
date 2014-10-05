@@ -102,10 +102,10 @@ function setupDomListeners() {
     }
   });
 
-  // Other
-  $('#clear').on('click', function() {
-    messagesRef.remove();
-    $('#messages').empty();
+  // Invite
+  $('#invite').on('click', function() {
+    // TODO ask for phone number or email
+    alert('NYI');
   });
 
   // Quit listener
@@ -273,8 +273,10 @@ function sizeEverything() {
   var fixedheight = $('#onlineStatusContainer').height() + $('#inputs').height();
   var windowheight = $(window).height();
 
-  $('#messages').height((windowheight - fixedheight) * .40);
-  $('#rapbuttons').height((windowheight - fixedheight) * .60);
+  // TODO handle tiny dekstop window/resizes
+  // TODO handle sizing better. Make sure it doesn't cut off last row of stickers.
+  $('#messages').height(parseInt((windowheight - fixedheight) * .40) - 20);
+  $('#rapbuttons').height(parseInt((windowheight - fixedheight) * .60) - 15);
 }
 
 function getQueryParam(name) {
