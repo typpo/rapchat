@@ -2,132 +2,158 @@ window.STICKERS = [
 {
 name: "2 chainz",
 slug: "twochainz",
-audio: "oggs/2chainz_4.ogg"
+audio: "oggs/2chainz_4.ogg",
+transcript: "2chainz"
 },
 {
 name: "2 chainz",
 slug: "twochainz",
-audio: "oggs/2chainz_yeah2.ogg"
+audio: "oggs/2chainz_yeah2.ogg",
+transcript: "yeah"
 },
 {
 name: "2pac",
 slug: "tupac",
-audio: "oggs/2pac_4.ogg"
+audio: "oggs/2pac_4.ogg",
+transcript: "baby"
 },
 {
 name: "2pac",
 slug: "tupac",
-audio: "oggs/2pac_5.ogg"
+audio: "oggs/2pac_5.ogg",
+transcript: "yeah nigga"
 },
 {
 name: "2pac",
 slug: "tupac",
-audio: "oggs/2pac_6.ogg"
+audio: "oggs/2pac_6.ogg",
+transcript: "thug life"
 },
 {
 name: "50 Cent",
 slug: "fiftycent",
-audio: "oggs/50_5.ogg"
+audio: "oggs/50_5.ogg",
+transcript: "g unit"
 },
 {
 name: "50 Cent",
 slug: "fiftycent",
-audio: "oggs/50_8.ogg"
+audio: "oggs/50_8.ogg",
+transcript: "it's 50"
 },
 {
 name: "50 Cent",
 slug: "fiftycent",
-audio: "oggs/50_11.ogg"
+audio: "oggs/50_11.ogg",
+transcript: "haha"
 },
 {
 name: "50 Cent",
 slug: "fiftycent",
-audio: "oggs/50cent_2.ogg"
+audio: "oggs/50cent_2.ogg",
+transcript: "yeah"
 },
 {
 name: "Action Bronson",
 slug: "actionbronson",
-audio: "oggs/action_bronsolino.ogg"
+audio: "oggs/action_bronsolino.ogg",
+transcript: "bronsolino"
 },
 {
 name: "Action Bronson",
 slug: "actionbronson",
-audio: "oggs/action_yeah.ogg"
+audio: "oggs/action_yeah.ogg",
+transcript: "yeah"
 },
 {
 name: "Action Bronson",
 slug: "actionbronson",
-audio: "oggs/action_yo.ogg"
+audio: "oggs/action_yo.ogg",
+transcript: "yo"
 },
 {
 name: "Akon",
 slug: "akon",
-audio: "oggs/akon_1.ogg"
+audio: "oggs/akon_1.ogg",
+transcript: "convict music"
 },
 {
 name: "Beanie Sigel",
 slug: "beaniesigel",
-audio: "oggs/beanie_mac.ogg"
+audio: "oggs/beanie_mac.ogg",
+transcript: "mac"
 },
 {
 name: "Big Boi",
 slug: "bigboi",
-audio: "oggs/bigboi_1.ogg"
+audio: "oggs/bigboi_1.ogg",
+transcript: "??"
 },
 {
 name: "Big L",
 slug: "bigl",
-audio: "oggs/bigl_3.ogg"
+audio: "oggs/bigl_3.ogg",
+transcript: "ayo"
 },
 {
 name: "Big L",
 slug: "bigl",
-audio: "oggs/bigl_4.ogg"
+audio: "oggs/bigl_4.ogg",
+transcript: "??"
 },
 {
 name: "Big L",
 slug: "bigl",
-audio: "oggs/bigl_5.ogg"
+audio: "oggs/bigl_5.ogg",
+transcript: "harlem's finest"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_boi2.ogg"
+audio: "oggs/bigsean_boi2.ogg",
+transcript: "boi"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_doit.ogg"
+audio: "oggs/bigsean_doit.ogg",
+transcript: "do it"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_holdup2.ogg"
+audio: "oggs/bigsean_holdup2.ogg",
+transcript: "hold up"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_ohgod.ogg"
+audio: "oggs/bigsean_ohgod.ogg",
+transcript: "oh god"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_okay.ogg"
+audio: "oggs/bigsean_okay.ogg",
+transcript: "ok"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_stop.ogg"
+audio: "oggs/bigsean_stop.ogg",
+transcript: "stop"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_whoa.ogg"
+audio: "oggs/bigsean_whoa.ogg",
+transcript: "woah"
 },
 {
 name: "Big Sean",
 slug: "bigsean",
-audio: "oggs/bigsean_whoathere.ogg"
+audio: "oggs/bigsean_whoathere.ogg",
+transcript: "woah there"
 },
 {
 name: "Birdman",
