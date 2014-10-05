@@ -61,7 +61,9 @@ function setupDomListeners() {
       $('#message').attr('disabled', true);
       setTimeout(function() {
         $('#message').removeAttr('disabled');
-        $('#message').focus();
+        if (!isMobile()) {
+          $('#message').focus();
+        }
       }, 100);
     }
   });
