@@ -135,6 +135,11 @@ and (max-width : 620px) {
 
     width: 100%;
   }
+  #message:focus {
+    /* Move message to the top so virtual keyboard doesn't overlap it */
+    position: absolute;
+    top: 0;
+  }
   #rapbuttons {
     height: 300px;
     border: 1px solid #ccc;

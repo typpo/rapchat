@@ -65,7 +65,23 @@ function setupDomListeners() {
       }, 100);
     }
   });
-  $('#message').focus();
+
+  // Message box focus handlers
+  if (!isMobile()) {
+    $('#message').focus();
+  } else {
+    // Message box moves to top of screen on mobile so virtual keyboard doesn't
+    // cover it.
+    var prevHeight;
+    $('#message').focus(function() {
+      prevHeight = $('#inputs').height()
+      $('#inputs').css('height', 0);
+      sizeEverything();
+    }).blur(function() {
+      $('#inputs').css('height', prevHeight);
+      sizeEverything();
+    });
+  }
 
   // Name change.
   $('#changeName').on('click', function() {
@@ -246,13 +262,6 @@ function handleNewMessage(snapshot) {
   scrollDown();
 }
 
-function getQueryParam(name) {
-  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-  results = regex.exec(location.search);
-  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 function scrollDown() {
   $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
 }
@@ -263,4 +272,15 @@ function sizeEverything() {
 
   $('#messages').height((windowheight - fixedheight) * .40);
   $('#rapbuttons').height((windowheight - fixedheight) * .60);
+}
+
+function getQueryParam(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+  results = regex.exec(location.search);
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function isMobile() {
+  return (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 }
