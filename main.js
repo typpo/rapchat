@@ -147,10 +147,15 @@ function setupStickerButtons() {
       ts: Firebase.ServerValue.TIMESTAMP
     });
 
+    // TODO update this.
     $('#rapbuttons button').attr('disabled', true);
     setTimeout(function() {
       $('#rapbuttons button').removeAttr('disabled');
     }, 650);
+
+    if (!isMobile()) {
+      $('#message').focus();
+    }
   });
 }
 
