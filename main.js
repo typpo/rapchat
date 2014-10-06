@@ -51,6 +51,7 @@ function setupDomListeners() {
         return;
       }
       if (text === '/clear') {
+        // TODO fix this
         $('#clear').trigger('click');
         $('#message').val('');
         return;
