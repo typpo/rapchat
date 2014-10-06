@@ -205,6 +205,7 @@ function newAction(name, text) {
 }
 
 function newSticker(name, sticker, slug, noPlay) {
+  console.log('new sticker', arguments);
   var sound = new Howl({
     urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
     volume: 1
@@ -244,12 +245,12 @@ function changeNameTo(newName) {
 function handleNewMessage(snapshot) {
   var message = snapshot.val();
   var partOfHistory = false;
-  console.log(message);
-  if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
+  /*if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
     //return;
     // Show all past messages, up to MESSAGE_LIMIT.
     partOfHistory = true;
-  } else if (new Date().getTime() - message.ts > 5000) {
+  } else*/
+  if (new Date().getTime() - message.ts > 10000) {
     partOfHistory = true;
   }
 
