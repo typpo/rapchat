@@ -70,7 +70,9 @@ function setupDomListeners() {
   });
 
   // Message box focus handlers
-  if (!isMobile()) {
+  if (isIFrame()) {
+    $('#message').css({position: 'relative'});
+  } else if (!isMobile()) {
     $('#message').focus();
   } else {
     // Message box moves to top of screen on mobile so virtual keyboard doesn't
@@ -298,4 +300,8 @@ function getQueryParam(name) {
 
 function isMobile() {
   return (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+}
+
+function isIFrame() {
+  return getQueryParam('iframe') === '1';
 }
