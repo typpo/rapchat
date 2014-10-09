@@ -269,14 +269,15 @@ function handleNewMessage(snapshot) {
         newAction(message.name, 'is now known as ' + message.newname);
         break;
     }
+    newMessageNotification();
   } else if (message.sticker) {
     // If it's in the past but we still want to show it, don't play noise.
     newSticker(message.name, message.sticker, message.slug, partOfHistory);
+    newMessageNotification();
   } else {
     newMessage(message.name, message.text);
   }
   scrollDown();
-  newMessageNotification();
 }
 
 function scrollDown() {
