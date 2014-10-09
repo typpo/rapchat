@@ -276,6 +276,7 @@ function handleNewMessage(snapshot) {
     newMessage(message.name, message.text);
   }
   scrollDown();
+  newMessageNotification();
 }
 
 function scrollDown() {
@@ -305,6 +306,42 @@ function isMobile() {
 
 function isIFrame() {
   return getQueryParam('iframe') === '1';
+}
+
+
+/*** Message notifications and such ***/
+
+var windowFocus = true;
+$(window).focus(function() {
+  windowFocus = true;
+  stopMessageNotification();
+}).blur(function() {
+  windowFocus = false;
+});
+
+var newMessageInterval = null;
+var originalTitle = document.title;
+function newMessageNotification() {
+  if (newMessageInterval || windowFocus) {
+    return;
+  }
+  var flip = true;
+  newMessageInterval = setInterval(function() {
+    if (flip) {
+      document.title = '!!! Message - RapChat';
+    } else {
+      document.title = originalTitle;
+    }
+    flip = !flip;
+  }, 1000);
+}
+
+function stopMessageNotification() {
+  if (newMessageInterval) {
+    clearInterval(newMessageInterval);
+    newMessageInterval = null;
+    document.title = originalTitle;
+  }
 }
 
 // Simple JavaScript Templating
