@@ -209,21 +209,25 @@ function newAction(name, text) {
 }
 
 function newSticker(name, sticker, slug, noPlay) {
-  console.log('new sticker', arguments);
   var sound = new Howl({
     urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
     volume: 1
   });
 
   var sticker = $('<div class="sticker artists-' + slug + '"></div>');
-  $('<p>').append(name + ':').append(sticker).appendTo($('#messages'));
+  // TODO fix this.
+  var sounddiv = $('<div style="float: left; margin-left: 150px; display:none;"><img src="images/sound.png" style=" width: 50px; height: auto;"></div>');
+  var namediv = $('<div>').text(name + ':');
+  $('<p>').append(namediv).append(sounddiv).append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
     sound.play();
+    sounddiv.show().hide(600);
   }
 
   sticker.on('click', function() {
     sound.play();
+    sounddiv.show().hide(600);
   });
 }
 
@@ -302,3 +306,39 @@ function isMobile() {
 function isIFrame() {
   return getQueryParam('iframe') === '1';
 }
+
+// Simple JavaScript Templating
+// John Resig - http://ejohn.org/ - MIT Licensed
+(function(){
+  var cache = {};
+
+  this.tmpl = function tmpl(str, data){
+    // Figure out if we're getting a template, or if we need to
+    // load the template - and be sure to cache the result.
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+        tmpl(document.getElementById(str).innerHTML) :
+
+      // Generate a reusable function that will serve as a template
+      // generator (and which will be cached).
+      new Function("obj",
+        "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+        // Introduce the data as local variables using with(){}
+        "with(obj){p.push('" +
+
+        // Convert the template into pure JavaScript
+        str
+          .replace(/[\r\t\n]/g, " ")
+          .split("<%").join("\t")
+          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+          .replace(/\t=(.*?)%>/g, "',$1,'")
+          .split("\t").join("');")
+          .split("%>").join("p.push('")
+          .split("\r").join("\\'")
+      + "');}return p.join('');");
+
+    // Provide some basic currying to the user
+    return data ? fn( data ) : fn;
+  };
+})();
