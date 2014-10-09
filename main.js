@@ -109,8 +109,10 @@ function setupDomListeners() {
 
   // Invite
   $('#invite').on('click', function() {
-    // TODO ask for phone number or email
-    alert('NYI');
+    var input = prompt('Enter an email address or phone number to invite them to your chat.');
+    if (input && input.trim()) {
+      // TODO send to backend
+    }
   });
 
   // Quit listener
@@ -127,11 +129,6 @@ function setupStickerButtons() {
         .addClass('stickerButton')
         .text(display).data('slug', sticker.slug);
 
-        /*
-    $('<span>').addClass('stickerWrapper sticker artists-bigsean')
-        .append(button)
-        .appendTo($('#rapbuttons'));
-        */
     var sticker = $('<div class="sticker artists-' + sticker.slug + '">')
         .data('slug', sticker.slug)
         .data('sticker', display)
