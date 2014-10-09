@@ -20,6 +20,8 @@ var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
 var userRef = listRef.push();
 var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
 
+var loadTimeStamp = +new Date();
+
 $(function() {
   sizeEverything();
 
@@ -247,12 +249,7 @@ function changeNameTo(newName) {
 function handleNewMessage(snapshot) {
   var message = snapshot.val();
   var partOfHistory = false;
-  /*if (message.ts < new Date().getTime() - BACK_HISTORY_MS) {
-    //return;
-    // Show all past messages, up to MESSAGE_LIMIT.
-    partOfHistory = true;
-  } else*/
-  if (new Date().getTime() - message.ts > 10000) {
+  if (new Date().getTime() - message.ts > 10000 && message.ts < loadTimeStamp) {
     partOfHistory = true;
   }
 
