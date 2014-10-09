@@ -219,12 +219,12 @@ function newSticker(name, sticker, slug, noPlay) {
 
   if (!noPlay) {
     sound.play();
-    sounddiv.show().hide(600);
+    sounddiv.show().fadeOut();
   }
 
   sticker.on('click', function() {
     sound.play();
-    sounddiv.show().hide(600);
+    sounddiv.show().fadeOut();
   });
 }
 
