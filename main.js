@@ -165,7 +165,7 @@ function setupPresenceHandlers() {
   // Add ourselves to presence list when online.
   presenceRef.on('value', function(snap) {
     if (snap.val()) {
-      userRef.set({name: currentName});
+      updatePresence({name: currentName});
       // Remove ourselves when we disconnect.
       userRef.onDisconnect().remove();
     }
@@ -179,7 +179,11 @@ function setupPresenceHandlers() {
     snap.forEach(function(userPresenceSnap) {
       var userPresence = userPresenceSnap.val();
       if (userPresence.name) {
-        onlines.push(userPresence.name);
+        var namestr = userPresence.name;
+        if (userPresence.focused) {
+          namestr += '*';
+        }
+        onlines.push(namestr);
         onlineMap[userPresence.name] = true;
       } else {
         onlines.push('?');
@@ -188,6 +192,24 @@ function setupPresenceHandlers() {
     $('#onlineList').text(onlines.join(', '));
     onlineListRetrievedOnce = true;
   });
+}
+
+function setPresenceFocused() {
+  updatePresence({focused: true});
+}
+
+function setPresenceUnfocused() {
+  updatePresence({focused: false});
+}
+
+var userRefValue = {};
+function updatePresence(updates) {
+  for (var x in updates) {
+    if (updates.hasOwnProperty(x)) {
+      userRefValue[x] = updates[x];
+    }
+  }
+  userRef.set(userRefValue);
 }
 
 function newMessage(message, playNotification) {
@@ -248,7 +270,7 @@ function changeNameTo(newName) {
       status: 'NAMECHANGE',
       ts: Firebase.ServerValue.TIMESTAMP
     });
-    userRef.set({name: currentName});
+    updatePresence({name: currentName});
   }
   localStorage['preferredName'] = currentName;
 }
@@ -325,12 +347,16 @@ function isIFrame() {
 /*** Message notifications and such ***/
 
 var windowFocus = true;
-$(window).focus(function() {
+$(window).focus(windowFocusHandler).blur(function() {
+  windowFocus = false;
+  setPresenceUnfocused();
+});
+function windowFocusHandler() {
   windowFocus = true;
   stopMessageNotification();
-}).blur(function() {
-  windowFocus = false;
-});
+  setPresenceFocused();
+};
+windowFocusHandler();
 
 var newMessageInterval = null;
 var originalTitle = document.title;
