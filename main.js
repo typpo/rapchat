@@ -190,8 +190,9 @@ function setupPresenceHandlers() {
   });
 }
 
-function newMessage(name, text, playNotification) {
-  $('<p>').text(name + ': ' + text).appendTo($('#messages'));
+function newMessage(message, playNotification) {
+  $('<p>').addClass('message').text(message.name + ': ' + message.text)
+    .append(getTimestampElt(message.ts)).appendTo($('#messages'));
   if (playNotification) {
     var sound = new Howl({
       urls: ['rapchat_notification.ogg'],
@@ -201,11 +202,15 @@ function newMessage(name, text, playNotification) {
   }
 }
 
-function newAction(name, text) {
-  $('<p>').text(name + ' ' + text).addClass('newAction').appendTo($('#messages'));
+function newAction(message, text) {
+  $('<p>').text(message.name + ' ' + text).addClass('newAction')
+    .append(getTimestampElt(message.ts)).appendTo($('#messages'));
 }
 
-function newSticker(name, sticker, slug, noPlay) {
+function newSticker(message, noPlay) {
+  var name = message.name;
+  var sticker = message.sticker;
+  var slug = message.slug;
   var sound = new Howl({
     urls: ['oggs/' + sticker + '.ogg', 'mp3s/' + sticker + '.mp3'],
     volume: 1
@@ -215,7 +220,8 @@ function newSticker(name, sticker, slug, noPlay) {
   // TODO fix this.
   var sounddiv = $('<div style="float: left; margin-left: 150px; display:none;"><img src="images/sound.png" style=" width: 50px; height: auto;"></div>');
   var namediv = $('<div>').text(name + ':');
-  $('<p>').append(namediv).append(sounddiv).append(sticker).appendTo($('#messages'));
+  $('<p>').append(namediv).append(sounddiv).append(getTimestampElt(message.ts))
+    .append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
     sound.play();
@@ -257,24 +263,38 @@ function handleNewMessage(snapshot) {
   if (message.status) {
     switch(message.status) {
       case 'JOINED':
-        newAction(message.name, 'has joined');
+        newAction(message, 'has joined');
         break;
       case 'QUIT':
-        newAction(message.name, 'has quit');
+        newAction(message, 'has quit');
         break;
       case 'NAMECHANGE':
-        newAction(message.name, 'is now known as ' + message.newname);
+        newAction(message, 'is now known as ' + message.newname);
         break;
     }
     newMessageNotification();
   } else if (message.sticker) {
     // If it's in the past but we still want to show it, don't play noise.
-    newSticker(message.name, message.sticker, message.slug, partOfHistory);
+    newSticker(message, partOfHistory);
     newMessageNotification();
   } else {
-    newMessage(message.name, message.text);
+    newMessage(message);
   }
   scrollDown();
+}
+
+function getTimestampElt(ts) {
+  var time = new Date(ts);
+  var hours = time.getHours() % 12;
+  // minutes part from the timestamp
+  var minutes = "0" + time.getMinutes();
+  // seconds part from the timestamp
+  var seconds = "0" + time.getSeconds();
+
+  // will display time in 10:30:23 format
+  var formattedTime = hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
+  console.log('stamp', formattedTime);
+  return $('<span>').addClass('timestamp').text('Sent at ' + formattedTime);
 }
 
 function scrollDown() {

@@ -41,6 +41,11 @@ body {
   padding-top: 17px;
 }
 
+.timestamp {
+  float: right;
+  color: #ccc;
+}
+
 .newAction {
   font-style: italic;
 }
