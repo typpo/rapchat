@@ -8,6 +8,8 @@ if (~window.location.href.indexOf('localhost')) {
   DEFAULT_ROOM = 'test';
 }
 
+var IDLE_TIMEOUT_MS = 10*60*1000;
+
 // Extent of message history, per room.
 var MESSAGE_LIMIT = 50;
 
@@ -194,12 +196,19 @@ function setupPresenceHandlers() {
   });
 }
 
+var idleTimer;
 function setPresenceFocused() {
+  if (idleTimer) {
+    clearTimeout(idleTimer);
+    idleTimer = null;
+  }
   updatePresence({focused: true});
 }
 
 function setPresenceUnfocused() {
-  updatePresence({focused: false});
+  idleTimer = setTimeout(function() {
+    updatePresence({focused: false});
+  }, IDLE_TIMEOUT_MS);
 }
 
 var userRefValue = {};
