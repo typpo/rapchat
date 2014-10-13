@@ -220,7 +220,7 @@ function newSticker(message, noPlay) {
   // TODO make this not suck.
   var sounddiv = $('<div style="float: left; margin-left: 150px; display:none;"><img src="images/sound.png" style=" width: 50px; height: auto;"></div>');
   var namediv = $('<div>').text(name + ':');
-  $('<p>').append(namediv).append(sounddiv).append(getTimestampElt(message.ts))
+  $('<p>').append(namediv).append(getTimestampElt(message.ts).append(sounddiv))
     .append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
@@ -286,14 +286,9 @@ function handleNewMessage(snapshot) {
 function getTimestampElt(ts) {
   var time = new Date(ts);
   var hours = time.getHours() % 12;
-  // minutes part from the timestamp
   var minutes = "0" + time.getMinutes();
-  // seconds part from the timestamp
   var seconds = "0" + time.getSeconds();
-
-  // will display time in 10:30:23 format
   var formattedTime = hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
-  console.log('stamp', formattedTime);
   return $('<span>').addClass('timestamp').text('Sent at ' + formattedTime);
 }
 
