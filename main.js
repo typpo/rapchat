@@ -217,7 +217,7 @@ function newSticker(message, noPlay) {
   });
 
   var sticker = $('<div class="sticker artists-' + slug + '"></div>');
-  // TODO fix this.
+  // TODO make this not suck.
   var sounddiv = $('<div style="float: left; margin-left: 150px; display:none;"><img src="images/sound.png" style=" width: 50px; height: auto;"></div>');
   var namediv = $('<div>').text(name + ':');
   $('<p>').append(namediv).append(sounddiv).append(getTimestampElt(message.ts))
@@ -278,7 +278,7 @@ function handleNewMessage(snapshot) {
     newSticker(message, partOfHistory);
     newMessageNotification();
   } else {
-    newMessage(message);
+    newMessage(message, !partOfHistory && message.name !== currentName);
   }
   scrollDown();
 }
