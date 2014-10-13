@@ -195,7 +195,7 @@ function newMessage(message, playNotification) {
     .append(getTimestampElt(message.ts)).appendTo($('#messages'));
   if (playNotification) {
     var sound = new Howl({
-      urls: ['rapchat_notification.ogg'],
+      urls: ['rapchat_notification.ogg', 'rapchat_notification.mp3'],
       volume: 1,
       autoplay: true
     });
