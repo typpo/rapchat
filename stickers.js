@@ -714,6 +714,12 @@ audio: "oggs/kanye_1.ogg",
 transcript: " "
 },
 {
+name: "Kanye West",
+slug: "kanye",
+audio: "oggs/kanye_mom.ogg",
+transcript: "don't tell your mom"
+},
+{
 name: "Killer Mike",
 slug: "killermike",
 audio: "oggs/killermike_2.ogg",
