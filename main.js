@@ -227,9 +227,8 @@ function newMessage(message, playNotification) {
   if (playNotification) {
     var sound = new Howl({
       urls: ['rapchat_notification.ogg', 'rapchat_notification.mp3'],
-      volume: 1,
-      autoplay: true
-    });
+      volume: 1
+    }).play();
   }
 }
 
@@ -255,6 +254,7 @@ function newSticker(message, noPlay) {
     .append(sticker).appendTo($('#messages'));
 
   if (!noPlay) {
+    // TODO handle things correctly when sound has not yet loaded.
     sound.play();
     sounddiv.show().fadeOut();
   }
