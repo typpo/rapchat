@@ -403,6 +403,7 @@ function stopMessageNotification() {
 
 /*** App stuff ***/
 
+
 function setupApp() {
   document.addEventListener('deviceready', onDeviceReady, false);
 }
@@ -410,6 +411,8 @@ function setupApp() {
 function onDeviceReady() {
   document.addEventListener("pause", onPause, false);
   document.addEventListener("resume", onResume, false);
+
+  setupPushNotifications();
 }
 
 function onPause() {
@@ -418,4 +421,45 @@ function onPause() {
 
 function onResume() {
   alert('welcome back');
+}
+
+function setupPushNotifications() {
+  var pushNotification;
+  pushNotification = window.plugins.pushNotification;
+
+  if (device.platform.toLowerCase() === 'android' || device.platform === 'amazon-fireos') {
+    pushNotification.register(
+    successHandler,
+    errorHandler,
+    {
+        'senderID':'689564149247',
+        'ecb':'onNotification'
+    });
+  } else if (device.platform == 'blackberry10') {
+    /*
+      pushNotification.register(
+      successHandler,
+      errorHandler,
+      {
+          invokeTargetId : 'replace_with_invoke_target_id',
+          appId: 'replace_with_app_id',
+          ppgUrl:'replace_with_ppg_url', //remove for BES pushes
+          ecb: 'pushNotificationHandler',
+          simChangeCallback: replace_with_simChange_callback,
+          pushTransportReadyCallback: replace_with_pushTransportReady_callback,
+          launchApplicationOnPush: true
+      });
+     */
+  } else {
+    // iOS
+    pushNotification.register(
+    tokenHandler,
+    errorHandler,
+    {
+        'badge':'true',
+        'sound':'true',
+        'alert':'true',
+        'ecb':'onNotificationAPN'
+    });
+  }
 }
