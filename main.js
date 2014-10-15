@@ -43,6 +43,11 @@ $(function() {
 
   // Chat handler
   messagesRef.endAt().limit(MESSAGE_LIMIT).on('child_added', handleNewMessage);
+
+  // App stuff
+  if (isApp()) {
+    setupApp();
+  }
 });
 
 function setupDomListeners() {
@@ -352,6 +357,10 @@ function isIFrame() {
   return getQueryParam('iframe') === '1';
 }
 
+function isApp() {
+  return getQueryParam('app') === '1';
+}
+
 
 /*** Message notifications and such ***/
 
@@ -390,4 +399,23 @@ function stopMessageNotification() {
     newMessageInterval = null;
     document.title = originalTitle;
   }
+}
+
+/*** App stuff ***/
+
+function setupApp() {
+  document.addEventListener('deviceready', onDeviceReady, false);
+}
+
+function onDeviceReady() {
+  document.addEventListener("pause", onPause, false);
+  document.addEventListener("resume", onResume, false);
+}
+
+function onPause() {
+
+}
+
+function onResume() {
+  alert('welcome back');
 }
