@@ -54,6 +54,12 @@ audio: "oggs/50cent_2.ogg",
 transcript: "yeah"
 },
 {
+name: "50 Cent",
+slug: "fiftycent",
+audio: "oggs/50_soseductive.ogg",
+transcript: "so seductive"
+},
+{
 name: "Action Bronson",
 slug: "actionbronson",
 audio: "oggs/action_bronsolino.ogg",
