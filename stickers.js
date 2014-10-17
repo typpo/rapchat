@@ -60,6 +60,18 @@ audio: "oggs/50_soseductive.ogg",
 transcript: "so seductive"
 },
 {
+name: "50 Cent",
+slug: "fiftycent",
+audio: "oggs/50_lollipop.ogg",
+transcript: "i let you lick the lollipop"
+},
+{
+name: "50 Cent",
+slug: "fiftycent",
+audio: "oggs/50_lovedoctor.ogg",
+transcript: "I'm the love doctor"
+},
+{
 name: "Action Bronson",
 slug: "actionbronson",
 audio: "oggs/action_bronsolino.ogg",
