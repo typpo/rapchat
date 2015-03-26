@@ -18,8 +18,10 @@ var onlineMap = {};
 var onlineListRetrievedOnce = false;
 var room = getQueryParam('r') || DEFAULT_ROOM;
 var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
-var listRef = new Firebase(BASE_FIREBASE_URL + 'presence/');
+var listRef = new Firebase(BASE_FIREBASE_URL + 'presence2/');
 var userRef = listRef.push();
+// Remove ourselves when we disconnect.
+userRef.onDisconnect().remove();
 var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
 
 var loadTimeStamp = +new Date();
@@ -173,8 +175,6 @@ function setupPresenceHandlers() {
   presenceRef.on('value', function(snap) {
     if (snap.val()) {
       updatePresence({name: currentName});
-      // Remove ourselves when we disconnect.
-      userRef.onDisconnect().remove();
     }
   });
 
