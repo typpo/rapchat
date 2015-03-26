@@ -384,6 +384,12 @@ audio: "oggs/djkhaled_appreciate.ogg",
 transcript: "I appreciate that"
 },
 {
+name: "DJ Khaled",
+slug: "khaled",
+audio: "oggs/djkhaled_comeback.ogg",
+transcript: "Come back and ask for more"
+},
+{
 name: "DJ Paul",
 slug: "djpaul",
 audio: "oggs/djpaul_2.ogg",
