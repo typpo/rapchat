@@ -372,6 +372,12 @@ audio: "oggs/djkhaled_3.ogg",
 transcript: "Dis for the hood (echo)"
 },
 {
+name: "DJ Khaled",
+slug: "khaled",
+audio: "oggs/djkhaled_saymyname.ogg",
+transcript: "Say my name, baby"
+},
+{
 name: "DJ Paul",
 slug: "djpaul",
 audio: "oggs/djpaul_2.ogg",
