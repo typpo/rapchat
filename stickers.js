@@ -378,6 +378,12 @@ audio: "oggs/djkhaled_saymyname.ogg",
 transcript: "Say my name, baby"
 },
 {
+name: "DJ Khaled",
+slug: "khaled",
+audio: "oggs/djkhaled_appreciate.ogg",
+transcript: "I appreciate that"
+},
+{
 name: "DJ Paul",
 slug: "djpaul",
 audio: "oggs/djpaul_2.ogg",
