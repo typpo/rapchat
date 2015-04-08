@@ -8,6 +8,10 @@ Session.vim
 .netrwhist
 *~
 
+### OSX ###
+
+.DS_Store
+
 
 ### Node ###
 # Logs

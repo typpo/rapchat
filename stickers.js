@@ -390,6 +390,12 @@ audio: "oggs/djkhaled_comeback.ogg",
 transcript: "Come back and ask for more"
 },
 {
+name: "DJ Khaled",
+slug: "khaled",
+audio: "oggs/djkhaled_youverysmart.ogg",
+transcript: "You very smart"
+},
+{
 name: "DJ Paul",
 slug: "djpaul",
 audio: "oggs/djpaul_2.ogg",
