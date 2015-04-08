@@ -392,7 +392,7 @@ transcript: "Come back and ask for more"
 {
 name: "DJ Khaled",
 slug: "khaled",
-audio: "mp3s/djkhaled_youverysmart.mp3",
+audio: "oggs/djkhaled_youverysmart.ogg",
 transcript: "You very smart"
 },
 {
