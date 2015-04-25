@@ -321,7 +321,7 @@ function handleNewMessage(snapshot) {
 
 function getTimestampElt(ts) {
   var time = new Date(ts);
-  var hours = time.getHours() % 12;
+  var hours = time.getHours() == 12 ? 12 : time.getHours() % 12;
   var minutes = "0" + time.getMinutes();
   var seconds = "0" + time.getSeconds();
   var formattedTime = hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
