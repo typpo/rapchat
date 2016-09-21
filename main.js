@@ -1,4 +1,4 @@
-var BASE_FIREBASE_URL = 'https://kqw8tijfs91.firebaseio-demo.com/';
+var BASE_FIREBASE_URL = 'https://incandescent-inferno-2789.firebaseio.com/';
 
 // Chats and stickers to show in the past
 var BACK_HISTORY_MS = 60 * 1000;
