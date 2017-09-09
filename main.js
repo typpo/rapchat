@@ -18,11 +18,16 @@ var onlineMap = {};
 var onlineListRetrievedOnce = false;
 var room = getQueryParam('r') || DEFAULT_ROOM;
 var messagesRef = new Firebase(BASE_FIREBASE_URL + room);
-var listRef = new Firebase(BASE_FIREBASE_URL + 'presence2/');
+var listRef = new Firebase(BASE_FIREBASE_URL + 'presence3/');
 var userRef = listRef.push();
-// Remove ourselves when we disconnect.
-userRef.onDisconnect().remove();
 var presenceRef = new Firebase(BASE_FIREBASE_URL + '.info/connected');
+presenceRef.on('value', function(snap) {
+  if (snap.val()) {
+    // Remove ourselves when we disconnect.
+    userRef.onDisconnect().remove();
+    userRef.set(true);
+  }
+});
 
 var loadTimeStamp = +new Date();
 
